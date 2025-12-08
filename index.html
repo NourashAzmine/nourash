@@ -11,7 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
@@ -27,13 +30,22 @@
         <ul class="menu">
           <li><a href="#home" class="menu_btn">Home</a></li>
           <li><a href="#about" class="menu_btn">About</a></li>
-          <li><a href="#edu" class="menu_btn">Education</a></li>
+          <!-- <li><a href="#edu" class="menu_btn">Education</a></li> -->
           <li><a href="#skills" class="menu_btn">Skills</a></li>
+          <li><a href="#research" class="menu_btn">Research</a></li>
+          <li><a href="#projects" class="menu_btn">Projects</a></li>
+
           <li><a href="#contact" class="menu_btn">Contact</a></li>
         </ul>
         <div class="menu_btn"><i class="bx bx-menu"></i></div>
       </div>
+      
     </nav>
+    <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="myBar"></div>
+    </div>
+<div class="cursor"></div>
+<div class="cursor2"></div>
 
     <!-- home section starts here -->
     <section class="home" id="home">
@@ -41,6 +53,7 @@
         <div class="home_content">
           <div class="text_1">Hi, my name is</div>
           <div class="text_2">Nourash Azmine</div>
+          <div class="text_2">Chowdhury</div>
           <div class="text_3">And I'm a <span class="typing"></span></div>
         </div>
         <div class="images">
@@ -51,31 +64,391 @@
     </section>
 
     <!-- about section start -->
-    <section class="about" id="about">
-      <div class="max_width">
-        <h2 class="title">About me</h2>
-        <div class="about_content">
-          <div class="column left">
-            <img src="img/img2.jpg" alt="" />
-          </div>
-          <div class="column right">
-            <div class="text">
-              I'm Nourash. I am a
-              <span class="typing-2"></span>
+<section class="about" id="about">
+    <div class="max_width">
+        <h2 class="title hacker-text" data-value="About Me">About Me</h2>
+        
+        <div class="hud-container">
+            
+            <div class="hud-column left">
+                <div class="cyber-core">
+                    <div class="reactor-ring outer"></div>
+                    <div class="reactor-ring inner"></div>
+                    
+                    <div class="core-image-wrapper">
+                        <img src="img/img2.jpg" alt="Nourash Azmine" class="core-img">
+                        <div class="scanner-line"></div>
+                        <div class="scanner-overlay"></div>
+                    </div>
+                </div>
             </div>
-            <p>I am student of North South University<span id="dots">...</span><span id="more">
-              I am completing my undergraduate in Computer Science. I also work as freelancer. I have interest in 
-              appdevelopment and Webdevelopment.
-            </span></p>
+            
 
-           <button onclick="myFunction()" id="myBtn">Read more</button>
-          </div>
+            <div class="hud-column right">
+                
+                <div class="data-module">
+                    <div class="module-header">
+                        <span class="blink-dot"></span>
+                        <span class="mod-title">[ORIGIN_DATA] :: EDUCATION</span>
+                        <i class="fas fa-chevron-down mod-icon"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="terminal-text">
+                            <span class="cmd">> retrieving academic_records...</span><br>
+                            I am a graduate of <span class="highlight-yellow">North South University</span>, holding a B.Sc. in Computer Science & Engineering <span class="highlight-yellow">(BSCSE)</span>. My academic foundation is built on rigorous analysis and computational logic.
+                        </div>
+                    </div>
+                </div>
+
+              <div class="data-module">
+                    <div class="module-header">
+                        <span class="blink-dot"></span>
+                        <span class="mod-title">[CURRENT_PROTOCOL] :: WORK</span>
+                        <i class="fas fa-chevron-down mod-icon"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="terminal-text">
+                            <span class="cmd">> status check: ACTIVE</span><br>
+                            Currently operating as a <span class="highlight-yellow">Research Assistant (RA)</span> focusing on AI-driven drug discovery. Previously served as an <span class="highlight-yellow">Undergraduate Teaching Assistant (TA)</span>, mentoring students in technical concepts.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-module">
+                    <div class="module-header">
+                        <span class="blink-dot"></span>
+                        <span class="mod-title">[SYSTEM_UPDATE] :: FOCUS</span>
+                        <i class="fas fa-chevron-down mod-icon"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="terminal-text">
+                            <span class="cmd">> installing new_stacks...</span><br>
+                            While my background includes full-stack <span class="highlight-yellow">App & Web Development</span>, my primary processing power is now dedicated to <span class="highlight-yellow">Machine Learning</span>, <span class="highlight-yellow">Deep Learning</span>, and <span class="highlight-yellow">Computer Vision</span> architectures.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+    
 
+ <!-- skills section start -->
+<section class="skills-container" id="skills">
+        
+        
+        <div class="glass-card">
+             <div class="title-wrapper center-mode">
+    <h2 class="classy-title" data-text="My Expertise">My Skills</h2>
+    <div class="title-line"></div>
+</div>
+            <div class="content-grid">
+                
+                <div class="column experience-col">
+                    <h3 class="section-title">Overview</h3>
+                    <div class="text-content">
+                        <p>
+    I specialize in <span class="highlight-yellow">Machine Learning</span>, <span class="highlight-yellow">Deep Learning</span>, <span class="highlight-yellow">Computer Vision</span>, and <span class="highlight-yellow">Web Development</span> with strong experience in <span class="highlight-yellow">data-driven research workflows</span>.
+</p>
+<p>
+    My work includes medical imaging projects like <span class="highlight-yellow">cataract detection</span> and <span class="highlight-yellow">polyp analysis</span>, as well as <span class="highlight-yellow">complex video analytics systems</span>.
+</p>
+
+                   
+                        
+                            <p>
+                                I currently work as a <span class="highlight-yellow">Research Assistant (RA)</span> focusing on AI for drug discovery. Previously, I served as an <span class="highlight-yellow">Undergraduate Teaching Assistant (TA)</span> at North South University.
+                            </p>
+                            <p>
+    Beyond research, I have developed multiple <span class="highlight-yellow">web projects</span> and <span class="highlight-yellow">web apps</span> using <span class="highlight-yellow">Flask</span>, deployed <span class="highlight-yellow">ML models via TensorFlow Lite</span>, and managed <span class="highlight-yellow">databases with MySQL</span>. I am also proficient in leveraging <span class="highlight-yellow">cloud platforms</span> for <span class="highlight-yellow">scalable model deployment</span> and thrive in <span class="highlight-yellow">cross-functional teams</span>, bridging the gap between theoretical <span class="highlight-yellow">AI research</span> and practical, <span class="highlight-yellow">user-centric software solutions</span>.
+</p>
+
+                  
+                    </div>
+                </div>
+
+                <div class="column skills-col">
+                    <h3 class="section-title">Technical Arsenal</h3>
+                    
+                    <div class="skill-grid-container">
+                        
+                        <div class="skill-card">
+                            <h4 class="skill-card-title">Programming</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+                                <span class="skill-chip"><i class="fa-brands fa-java"></i> Java</span>
+    
+    <span class="skill-chip"><i  class="fa-solid fa-code"></i> C++</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-terminal"></i> C</span>
+    
+    <span class="skill-chip"><i class="fa-brands fa-r-project"></i> R</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-layer-group"></i> MATLAB</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4 class="skill-card-title">AI Frameworks</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="fa-solid fa-brain"></i> TensorFlow</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-fire"></i> PyTorch</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-layer-group"></i> Keras</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-eye"></i> OpenCV</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-language"></i> NLTK</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-table"></i> Pandas</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4 class="skill-card-title">Web & Data</h4>
+                            <div class="skill-chips">
+                              <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
+    
+    <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+    
+    <span class="skill-chip"><i class="fa-brands fa-php"></i> PHP</span>
+<span class="skill-chip"><i class="fa-solid fa-server"></i> Django</span>
+    
+    <span class="skill-chip"><i class="fa-brands fa-react"></i> React</span>
+    
+
+                                <span class="skill-chip"><i class="fa-solid fa-flask"></i> Flask</span>
+    
+    
+    <span class="skill-chip"><i class="fa-solid fa-database"></i> MySQL</span>
+    
+    
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4 class="skill-card-title">Research Areas</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+    <span class="skill-chip"><i class="fa-solid fa-language"></i> NLP</span>
+    <span class="skill-chip"><i class="fa-solid fa-x-ray"></i> Medical Imaging</span>
+    
+    <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+  
+    <span class="skill-chip"><i class="fa-solid fa-video"></i> Video Analytics</span>
+     <span class="skill-chip"><i class="fa-solid fa-pills"></i> Drug Discovery</span>
+    
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Research section start -->
+    <section class="research" id="research">
+        <div class="max_width">
+            <h2 class="title">Research & Publications</h2>
+            
+            <div class="research-container">
+                <div class="research-card">
+                    <div class="card-header">
+                        <i class="fas fa-scroll icon"></i>
+                        <span class="badge published">Published</span>
+                    </div>
+                    <h3>VisionEdge: Cataract Detection via Smartphone</h3>
+    <p class="authors"><strong>Nourash Azmine Chowdhury</strong>, Abdul Ahad, Ajmain Mahtab Alam, Abrar Fahim</p>
+    <p class="conference">2024 27th International Conference on Computer and Information Technology (ICCIT)</p>
+    
+    <p class="doi">
+        <a href="https://ieeexplore.ieee.org/document/11022415" target="_blank" rel="noopener noreferrer">
+            DOI: 10.1109/ICCIT64557.2024.10542385 <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 5px;"></i>
+        </a>
+    </p>
+                </div>
+
+                <div class="research-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-alt icon"></i>
+                        <span class="badge preprint">Preprint 2025</span>
+                    </div>
+                    <h3>Video-Based MPAA Rating Prediction: An Attention-Driven Hybrid Architecture</h3>
+                    <p class="authors">Dipta Neogi, <strong>Nourash Azmine Chowdhury</strong>, Muhammad Rafsan Kabir, Mohammad Ashrafuzzaman Khan</p>
+                    <p class="conference">arXiv Preprint</p>
+                    <p class="doi">
+        <a href="https://arxiv.org/abs/2509.06826" target="_blank" rel="noopener noreferrer">
+            DOI: 10.48550/arXiv.2509.06826 <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 5px;"></i>
+        </a>
+    </p>
+                </div>
+
+                <div class="research-card ongoing-card">
+                    <div class="card-header">
+                        <i class="fas fa-microscope icon"></i>
+                        <span class="badge ongoing">Ongoing</span>
+                    </div>
+                    <h3>Polyp Size Estimation and Classification</h3>
+                    <p class="desc">Developing deep learning methods for automated polyp size estimation and classification from endoscopic videos. Experimentation completed; manuscript in preparation.</p>
+                </div>
+
+                <div class="research-card ongoing-card">
+                    <div class="card-header">
+                        <i class="fas fa-dna icon"></i>
+                        <span class="badge ongoing">Ongoing</span>
+                    </div>
+                    <h3>Deep Learning Pipeline for Inhaled Corticosteroids</h3>
+                    <p class="desc">Designing a deep learning framework to generate potential inhaled corticosteroid structures for drug discovery in collaboration with the Department of Pharmacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Projects section start -->
+    
+<section class="projects" id="projects">
+        <div class="max_width">
+            <h2 class="title">My Projects</h2>
+            
+            <div class="project-grid">
+                
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Bangla Sign Language</div>
+                        <p>Real-time Bangla sign language translation using a CNN-LSTM deep learning model.</p>
+                        <div class="tech-stack"><span>Python</span><span>TensorFlow</span><span>OpenCV</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Cataract Detection App</div>
+                        <p>Android app for detecting cataracts via medical image analysis with real-time capture.</p>
+                        <div class="tech-stack"><span>Java</span><span>TF Lite</span><span>Android Studio</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Video Age Rating</div>
+                        <p>Web app predicting audience age groups for videos using a custom CNN-LSTM architecture.</p>
+                        <div class="tech-stack"><span>Flask</span><span>TensorFlow</span><span>JS</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Sentiment Analysis</div>
+                        <p>Analyzed social media posts to extract sentiment trends and visualize public opinion.</p>
+                        <div class="tech-stack"><span>Python</span><span>NLTK</span><span>Pandas</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Movie Recommender</div>
+                        <p>Recommendation engine using collaborative filtering to suggest movies based on history.</p>
+                        <div class="tech-stack"><span>Scikit-learn</span><span>Surprise</span><span>Flask</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="text">Medicine E-commerce</div>
+                        <p>PHP platform for buying prescription medicines with secure payment integration.</p>
+                        <div class="tech-stack"><span>PHP</span><span>MySQL</span><span>HTML/CSS</span></div>
+                    </div>
+                </div>
+
+                <div class="hidden-projects" id="more-projects">
+                    
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">AI Art Generator</div>
+                            <p>React frontend that generates artistic images from text prompts using Stable Diffusion API.</p>
+                            <div class="tech-stack"><span>React</span><span>Rest API</span><span>Tailwind</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">TaskMaster Pro</div>
+                            <p>A productivity dashboard with Kanban boards and real-time team collaboration features.</p>
+                            <div class="tech-stack"><span>React</span><span>Firebase</span><span>Redux</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">CropGuard AI</div>
+                            <p>Mobile app detecting crop diseases from leaf images using MobileNetV2 on-device.</p>
+                            <div class="tech-stack"><span>Kotlin</span><span>TF Lite</span><span>CameraX</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">BudgetBuddy</div>
+                            <p>Offline-first personal finance tracker with expense visualization and monthly reports.</p>
+                            <div class="tech-stack"><span>Java</span><span>Room DB</span><span>XML</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">Veritas NLP API</div>
+                            <p>Backend API that detects fake news articles using a fine-tuned BERT model.</p>
+                            <div class="tech-stack"><span>Django</span><span>PyTorch</span><span>HuggingFace</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">E-Shop Backend</div>
+                            <p>Scalable RESTful API for a multi-vendor e-commerce platform with JWT auth.</p>
+                            <div class="tech-stack"><span>Django Rest</span><span>PostgreSQL</span><span>Docker</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">PhishBlock</div>
+                            <p>Browser extension that flags potential phishing URLs in real-time using ML.</p>
+                            <div class="tech-stack"><span>JavaScript</span><span>TF.js</span><span>Chrome API</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">BriefIt Summarizer</div>
+                            <p>Instantly summarizes long web articles using an extractive summarization model.</p>
+                            <div class="tech-stack"><span>JavaScript</span><span>NLP API</span><span>HTML</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <div class="text">HexHunter</div>
+                            <p>Developer tool to pick colors from any website and generate palette codes instantly.</p>
+                            <div class="tech-stack"><span>JavaScript</span><span>CSS</span><span>Canvas API</span></div>
+                        </div>
+                    </div>
+
+                </div> </div>
+
+            <div class="project-btn-container">
+                <button onclick="toggleProjects()" id="loadMoreBtn" class="magnetic">Load More Projects</button>
+            </div>
+
+        </div>
+    </section>
     <!-- Edu section start -->
-    <section class="edu" id="edu">
+     <!-- <section class="edu" id="edu">
       <div class="max_width">
         <h2 class="title">My Education</h2>
         <div class="edu_content">
@@ -97,70 +470,18 @@
 
           <div class="card">
             <div class="box">
-              <h5>Undergraduation in CSE</h5>
-              <h4>2019 - Present</h4>
-              <h4>Northsouth University</h4>
+              <h5>BS in CSE</h5>
+              <h4>2024</h4>
+              <h4>North South University</h4>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+<!-- separtor -->
 
-    <!-- skills section start -->
-    <section class="skills" id="skills">
-      <div class="max-width">
-        <h2 class="title">My skills</h2>
-        <div class="skills-content">
-          <div class="column left">
-            <div class="text">My skills & experiences.</div>
-            <p>I have many skills but as this cv is for cse311 so I will<span id="dots2">...</span><span id="more2"> describe my Webdevelopment skills. I am good at front-end development more than back-end development. I have good knowledge of HTML, CSS, and javascript. I have made a couple of websites using these. I have been practicing front-end development for the last six months. I
-              have little knowledge of back-end development. I started learning PHP and MySQL two months earlier.  </span></p>
 
-<button onclick="myFunction2()" id="myBtn2">Read more</button>
-          </div>
-          <div class="column right">
-            <div class="bars">
-              <div class="info">
-                <span>HTML</span>
-                <span>90%</span>
-              </div>
-              <div class="line html"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>CSS</span>
-                <span>60%</span>
-              </div>
-              <div class="line css"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>JavaScript</span>
-                <span>80%</span>
-              </div>
-              <div class="line js"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>PHP</span>
-                <span>50%</span>
-              </div>
-              <div class="line php"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>MySQL</span>
-                <span>70%</span>
-              </div>
-              <div class="line mysql"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-
+   
     <!-- contact section start -->
     <section class="contact" id="contact">
       <div class="max-width">
@@ -193,6 +514,7 @@
                 <div class="info">
                   <div class="head">Email</div>
                   <div class="sub-title">nourashazmine@gmail.com</div>
+                  <div class="sub-title">nourash.chowdhury@northsouth.edu</div>
                 </div>
               </div>
             </div>
@@ -205,7 +527,7 @@
     <footer>
       <span
         >Created By <span class="name">Nourash Azmine Chowdhury</span></a> |
-        <span class="far fa-copyright"></span> 2022 All rights reserved.</span
+        <span class="far fa-copyright"></span> All rights reserved.</span
       >
     </footer>
 

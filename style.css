@@ -9,7 +9,41 @@
     --firstFont: 'Raleway', sans-serif;
     --secondFont: 'Roboto', sans-serif;
     --thirdFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --accentColor: #ffc234;  /* Yellow (Titles, Buttons) */
+    --pageBg: #ffffff;       /* White (Page Background) */
+    --cardBg: #1f1f1f;       /* Dark Grey (Main Card Background) */
+    --subCardBg: #111111;    /* Black (Skill Grid Cards) */
+    --chipBg: #2d2d2d;       /* Dark Grey (Skill Pills) */
+    --textColorDark: #000000;/* Black (Text on White) */
+    --textColorLight: #e0e0e0;/* White/Grey (Text on Dark) */
+
+    /* Fonts */
+    --titleFont: 'Raleway', sans-serif;
+    --bodyFont: 'Roboto', sans-serif;
 }
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track (Background) */
+::-webkit-scrollbar-track {
+    background: #111; /* Dark background */
+}
+
+/* Handle (The moving part) */
+::-webkit-scrollbar-thumb {
+    background: #333; /* Dark Grey */
+    border-radius: 5px;
+    border: 1px solid #111;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--firstColor); /* Turns Yellow on hover */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -168,6 +202,53 @@ html{
     left: 60%;
 }
 
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 9999;
+    background: transparent;
+}
+
+.scroll-progress-bar {
+    height: 4px;
+    background: whitesmoke; 
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.cursor {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--firstColor);
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    display: none; /* Only show on desktop if you prefer */
+}
+
+.cursor2 {
+    width: 8px;
+    height: 8px;
+    background-color: var(--firstColor);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* Only enable on devices with a mouse (not touch) */
+@media (pointer: fine) {
+    .cursor, .cursor2 { display: block; }
+}
+
 .home
 {
     display: flex;
@@ -222,6 +303,7 @@ button
     border: 2px solid var(--firstColor);
     transition: all 0.3s ease;
 }
+
 button:hover
 {
     color: var(--firstColor);
@@ -236,7 +318,7 @@ button:hover
 }
 section
 {
-    padding: 100px 0;
+    padding: 40px 0;
 }
 .about, .edu, .skills, .contact
 {
@@ -244,7 +326,7 @@ section
 }
 
 
-.about .about_content,
+
 .edu .edu_content,
 .skills .skills-content
 {
@@ -254,6 +336,233 @@ section
     justify-content: space-between;
 }
 
+/* =========================================
+   AI Identity Core (HUD) Styling
+   ========================================= */
+
+/* Layout Container */
+.hud-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 20px 0;
+}
+
+.hud-column {
+    flex: 1;
+}
+
+/* --- LEFT SIDE: The Cyber Core (Image) --- */
+.cyber-core {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Image Itself */
+.core-image-wrapper {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%; /* Circle */
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--firstColor);
+    box-shadow: 0 0 20px rgba(255, 194, 52, 0.2);
+}
+
+.core-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(1.1); /* Slight sci-fi look */
+}
+
+/* The Laser Scanner Line */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--firstColor);
+    box-shadow: 0 0 10px var(--firstColor);
+    animation: scan-down 3s ease-in-out infinite;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+/* Green tint overlay when scanner passes */
+.scanner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(255, 194, 52, 0.1), transparent);
+    animation: scan-down 3s ease-in-out infinite;
+    z-index: 4;
+}
+
+@keyframes scan-down {
+    0%, 100% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    50% { top: 100%; opacity: 1; }
+    90% { opacity: 1; }
+}
+
+/* Rotating Reactor Rings */
+.reactor-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 194, 52, 0.3);
+    z-index: 1;
+}
+
+.reactor-ring.outer {
+    width: 310px;
+    height: 310px;
+    border-top: 2px solid var(--firstColor);
+    border-bottom: 2px solid var(--firstColor);
+    animation: spin-right 10s linear infinite;
+}
+
+.reactor-ring.inner {
+    width: 280px;
+    height: 280px;
+    border-left: 2px solid var(--firstColor);
+    border-right: 2px solid var(--firstColor);
+    animation: spin-left 6s linear infinite;
+}
+
+@keyframes spin-right { 100% { transform: rotate(360deg); } }
+@keyframes spin-left { 100% { transform: rotate(-360deg); } }
+
+
+/* --- RIGHT SIDE: Data Modules (Accordion) --- */
+.data-module {
+    background: var(--cardBg);
+    border-left: 3px solid #333; /* Default inactive border */
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Header (Always Visible) */
+.module-header {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.3s ease;
+}
+
+/* Blinking Status Dot */
+.blink-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #555;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 0 5px #555;
+}
+
+.mod-title {
+    font-family: 'Courier New', monospace; /* Terminal Font */
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #888;
+    flex: 1;
+}
+
+.mod-icon {
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+/* Content (Hidden by default, Expands on Hover) */
+.module-content {
+    max-height: 0; /* Collapsed */
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease;
+    padding: 0 20px;
+    background: #1a1a1a;
+}
+
+.terminal-text {
+    padding: 20px 0;
+    font-family: var(--bodyFont);
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.cmd {
+    font-family: 'Courier New', monospace;
+    color: #555;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.highlight-yellow {
+    color: var(--firstColor);
+    font-weight: 500;
+}
+
+/* --- HOVER EFFECTS (The Interaction) --- */
+
+/* 1. When hovering the module, activate the header */
+.data-module:hover {
+    border-left: 3px solid var(--firstColor); /* Yellow Border */
+}
+
+.data-module:hover .module-header {
+    background: rgba(255, 194, 52, 0.1); /* Subtle Yellow bg */
+}
+
+.data-module:hover .mod-title {
+    color: var(--firstColor);
+}
+
+.data-module:hover .blink-dot {
+    background-color: var(--firstColor);
+    box-shadow: 0 0 10px var(--firstColor);
+    animation: blink-anim 1s infinite;
+}
+
+.data-module:hover .mod-icon {
+    color: var(--firstColor);
+    transform: rotate(180deg);
+}
+
+/* 2. Expand the content */
+.data-module:hover .module-content {
+    max-height: 200px; /* Large enough to fit content */
+    opacity: 1;
+}
+
+@keyframes blink-anim {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 947px) {
+    .hud-container {
+        flex-direction: column;
+    }
+    .hud-column.left {
+        margin-bottom: 40px;
+    }
+}
+
 
 section .title 
 {
@@ -261,7 +570,7 @@ section .title
     text-align: center;
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     padding-bottom: 20px;
     font-family: var(--firstFont);
 }
@@ -296,14 +605,25 @@ section .title::after
 {
     content: "who I am";
 }
+/* .about-me{
+    padding: 60px;
+    background-color: var(--chipBg);
+} */
 
-.about .about_content
+.about .about_content 
 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
+/* .about .about_content .right
+{
+    background-color: var(--subCardBg);
+    padding: 20px;
+}
+ */
+
 .about .about_content .left
 {
     width: 45%;
@@ -340,7 +660,15 @@ section .title::after
 {
     width: 50%;
 }
-
+h2.title.hacker-text{
+    margin-bottom: 0px;
+}
+section#about.about{
+    padding-bottom: 0px;
+}
+div.hub-container{
+    padding-top: 0px;
+}
 /* edu section styling */
 .edu{
     color: var(--secondColor);
@@ -408,79 +736,566 @@ section .title::after
     font-weight: 700;
 }
 /* skills section styling */
+.skills-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
 
-.skills .title::after{
-    content: "what i know";
+/* --- MAIN TITLE (Outside Card) --- */
+.outside-title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-family: var(--firstFont);
+    width: -moz-fit-content;
+    width: fit-content; 
+    margin: 0 auto 30px auto; /* Keeps it centered */
+    display: block;
 }
-.skills .skills-content .column{
-    width: calc(50% - 30px);
+
+/* Optional: Add the underline shown in image_fbbf78.png */
+.outside-title::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--textColorDark);
+    margin: 10px auto 0;
+    /* Set a minimum width so it doesn't disappear behind the subtitle text */
+    min-width: 60px; 
+    
+    /* Apply the loop: 3 seconds, infinite loop, smooth back-and-forth */
+    animation: bar-breathe 2s infinite alternate ease-in-out;
 }
-.skills .skills-content .left
-{
-    margin-left: 15px;
-    margin-right: 15px;
+.text-content {
+    padding: 10px;
 }
-.skills .skills-content .left .text{
-    font-size: 16px;
+.text-content p{
+    font-size: 10rem;
+}
+
+
+
+
+
+
+
+/* --- THE DARK CARD (Glass/Matte Look) --- */
+.glass-card {
+    background: var(--subCardBg);
+    color: var(--textColorLight); /* Force text inside to be white */
+    border-radius: 20px;
+    padding: 60px;
+    max-width: 1500px;
+    width: 100%;
+    /* Soft shadow to lift it off the white background */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* --- HEADERS INSIDE CARD --- */
+.section-title {
+    font-family: var(--titleFont);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--accentColor); /* Yellow */
+    margin-bottom: 20px;
+    text-align: center;
+}
+@keyframes expandLine {
+    0% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* 2. Apply it to your element */
+.section-title::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--accentColor);
+    margin: 10px auto 0;
+    
+    /* The Animation Logic */
+    /* Name | Duration | Loop | Direction | Smoothing */
+    animation: expandLine 1.5s infinite alternate ease-in-out;
+}
+
+/* --- GRID SYSTEM --- */
+.content-grid {
+    display: grid;
+    /* Split: 45% Text, 55% Skills */
+    grid-template-columns: 45% 55%;
+    gap: 60px;
+    align-items: start;
+}
+
+/* --- LEFT COLUMN (EXPERIENCE) --- */
+.text-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.text-content strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.highlight-yellow {
+    color: var(--accentColor);
     font-weight: 600;
+}
+.highlight-gold {
+    color: var(--fifthColor);
+    font-weight: 600;
+}
+
+#more-text { display: none; }
+
+.skills-col{
+    padding: 0px 50px 0px 0px;
+}
+
+/* --- RIGHT COLUMN (TECHNICAL ARSENAL GRID) --- */
+.skill-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns like image_effcfb.png */
+    gap: 20px;
+}
+
+/* Individual Skill Card (Black Box) */
+.skill-card {
+    background-color: var(--subCardBg);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid var(--accentColor);
+}
+
+.skill-card-title {
+    font-family: var(--titleFont);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accentColor); /* Yellow Title */
+    
+}
+
+/* The Chips/Pills Container */
+.skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* The Individual Pill (Dark Grey) */
+.skill-chip {
+    font-family: var(--bodyFont);
+    background-color: var(--chipBg); /* #2d2d2d */
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid #3d3d3d;
+}
+
+.skill-chip:hover {
+    background: var(--accentColor);
+    color: #000; /* Black text on yellow hover */
+
+}
+
+.skill-chip i {
+    font-size: 1rem;
+}
+
+/* --- BUTTON --- */
+.glow-button {
+    font-family: var(--titleFont);
+    background: transparent;
+    border: 2px solid var(--accentColor);
+    padding: 12px 35px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accentColor);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* --- SPOTLIGHT EFFECT FOR SKILL CARDS --- */
+
+/* 1. When the user hovers over the CONTAINER (the whole grid)... */
+.skill-grid-container:hover .skill-card {
+    opacity: 0.3;              /* Make all cards semi-transparent */
+    filter: blur(3px);         /* Blur them out */
+    transform: scale(0.98);    /* Shrink them slightly for depth */
+    transition: all 0.4s ease; /* smooth transition */
+}
+
+/* 2. ...EXCEPT the specific card being hovered */
+.skill-grid-container .skill-card:hover {
+    opacity: 1;                /* Restore full visibility */
+    filter: blur(0);           /* Remove blur */
+    transform: scale(1.05);    /* Scale up (Pop out) */
+    box-shadow: 0 0 25px rgba(255, 194, 52, 0.5); /* Strong Yellow Glow */
+    border-color: var(--accentColor); 
+    z-index: 2;                /* Ensure it sits on top of others */
+    cursor: pointer;
+}
+.glow-button:hover {
+    background: var(--accentColor);
+    color: #000; /* Black text on yellow hover */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .content-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skill-grid-container { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .glass-card { padding: 30px; }
+    .outside-title { font-size: 2.5rem; }
+    .skill-grid-container { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================
+   Research Section Styling
+   ========================================= */
+.research {
+    background-color: var(--thirdColor); /* Dark Background */
+    color: var(--secondColor);
+    font-family: var(--thirdFont);
+}
+
+.research .title::after {
+    content: "what I discovered";
+}
+
+.research .title::before {
+    background: var(--secondColor);
+}
+
+.research-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.research-card {
+    background: var(--fourthColor);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--firstColor); /* Yellow Accent Border */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 194, 52, 0.2);
+}
+
+.research-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.research-card .icon {
+    font-size: 30px;
+    color: var(--firstColor);
+}
+
+/* Badges */
+.badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge.published {
+    background: rgba(40, 167, 69, 0.2);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.badge.preprint {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+.badge.ongoing {
+    background: rgba(255, 194, 52, 0.2);
+    color: var(--firstColor);
+    border: 1px solid var(--firstColor);
+}
+
+.research-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: var(--firstFont);
+    color: var(--secondColor);
+    line-height: 1.4;
+}
+
+.research-card .authors {
+    font-size: 14px;
+    color: #b0b0b0;
     margin-bottom: 8px;
 }
-.skills .skills-content .left p{
+
+.research-card .authors strong {
+    color: var(--firstColor);
+    font-weight: 500;
+}
+
+.research-card .conference, 
+.research-card .doi {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--fifthColor);
+}
+
+.research-card .desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #dcdcdc;
     text-align: justify;
 }
 
 
+/* --- SPOTLIGHT EFFECT FOR RESEARCH SECTION --- */
+
+/* 1. When hovering over the MAIN CONTAINER, dim ALL cards inside */
+.research-container:hover .research-card {
+    opacity: 0.3;               /* Fade out */
+    filter: blur(2px);          /* Blur slightly */
+    transform: scale(0.98);     /* Shrink slightly */
+    transition: all 0.4s ease;  /* Smooth transition */
+}
+
+/* 2. EXCEPTION: The specific card you are hovering over */
+.research-container .research-card:hover {
+    opacity: 1;                 /* Fully visible */
+    filter: blur(0);            /* clear focus */
+    transform: scale(1.03) translateY(-5px); /* Scale up and move up */
+    box-shadow: 0 10px 30px rgba(255, 194, 52, 0.3); /* Strong Yellow Glow */
+    z-index: 5;                 /* Ensure it floats above others */
+    /* cursor: pointer; */
+}
 
 
-.skills .skills-content .right{
-    margin-right: 15px;
-    margin-left: 15px;
+
+/* =========================================
+   Projects Section Styling
+   ========================================= */
+   /* Project Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
 }
-.skills .skills-content .right .bars{
-    margin-bottom: 15px;
-}
-.skills .skills-content .right .info{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-}
-.skills .skills-content .right span{
-    font-weight: 600;
-    font-size: 16px;
-}
-.skills .skills-content .right .line{
-    height: 5px;
+
+/* Hidden Projects Container */
+.hidden-projects {
+    display: none; /* Hidden by default */
+    /* When visible, it will use the grid layout of its parent or sub-grid */
+    grid-column: 1 / -1; /* Span full width to contain its own grid items */
+    
+    /* Internal Grid for the hidden items */
+    display: none; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     width: 100%;
-    background: lightgrey;
-    position: relative;
-}
-.skills .skills-content .right .line::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: var(--fifthColor);
-
 }
 
+/* When the class 'active' is added via JS, we display it as a grid */
+.hidden-projects.active {
+    display: grid;
+    animation: fadeIn 0.5s ease-in-out;
+}
 
-.skills-content .right .html::before{
-    width: 90%;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-.skills-content .right .css::before{
-    width: 60%;
+
+/* Load More Button Styling */
+.project-btn-container {
+    text-align: center;
+    margin-top: 20px;
 }
-.skills-content .right .js::before{
-    width: 80%;
+
+#loadMoreBtn {
+    display: inline-block;
+    background: var(--firstColor);
+    color: var(--fourthColor); /* Dark text on yellow btn */
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 6px;
+    border: 2px solid var(--firstColor);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--titleFont);
 }
-.skills-content .right .php::before{
-    width: 50%;
+
+#loadMoreBtn:hover {
+    background: transparent;
+    color: var(--firstColor);
 }
-.skills-content .right .mysql::before{
-    width: 70%;
+
+.magnetic {
+    transition: transform 0.1s ease; /* Very fast response for physics feel */
 }
+.projects {
+    background: var(--pageBg); /* White Background */
+    color: var(--fourthColor);
+    font-family: var(--thirdFont);
+}
+
+.projects .title::after {
+    content: "what I built";
+}
+
+.projects .carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.projects .card {
+    background: var(--cardBg); /* Dark Card */
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.projects .card:hover {
+    background: transparent;
+    border-color: var(--firstColor);
+    transform: scale(1.02);
+}
+
+.projects .card .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.projects .card .text {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--firstColor);
+    margin-bottom: 10px;
+    font-family: var(--firstFont);
+}
+
+.projects .card p {
+    font-size: 15px;
+    color: var(--textColorLight);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.projects .card:hover .text,
+.projects .card:hover p {
+    color: var(--fourthColor); /* Text turns black on hover (white bg) */
+}
+
+/* Tech Stack Chips inside Projects */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-stack span {
+    font-size: 12px;
+    background: var(--chipBg);
+    color: var(--secondColor);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 500;
+    border: 1px solid #3d3d3d;
+    transition: all 0.3s ease;
+}
+
+.projects .card:hover .tech-stack span {
+    background: var(--firstColor);
+    color: var(--fourthColor);
+    border-color: var(--fourthColor);
+}
+
+/* --- SPOTLIGHT EFFECT FOR PROJECTS SECTION --- */
+
+/* 1. When hovering over the MAIN GRID, dim ALL cards (including hidden ones) */
+.project-grid:hover .card {
+    opacity: 0.9;               /* Make them see-through */
+    filter: blur(0.2px);          /* Blur them out */
+    transform: scale(0.98);     /* Shrink slightly */
+    transition: all 0.4s ease;  /* Smooth fade */
+}
+
+/* 2. EXCEPTION: The specific card you are hovering over */
+/* We use !important on transform to ensure it overrides your existing hover scale */
+.project-grid .card:hover {
+    opacity: 1;                 /* Fully visible */
+    filter: blur(0);            /* Crisp focus */
+    transform: scale(1.05) !important; /* Pop out larger than before */
+    z-index: 2;                 /* Bring to front */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Add depth shadow */
+    cursor: pointer;
+}
+
+/* Responsive adjustments for Research/Projects */
+@media (max-width: 947px) {
+    .research-container {
+        grid-template-columns: 1fr;
+    }
+    .projects .carousel {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+
 
 
 /* contact section styling */
@@ -740,4 +1555,285 @@ footer span a:hover{
         margin-bottom: 20px;
         font-size: smaller;
     }
+}
+
+/* Add this to your existing .hidden-projects styling */
+.hidden-projects .card {
+    opacity: 0;
+    animation: fadeSlideUp 0.5s ease forwards;
+}
+/* Staggered Animation for "Load More" */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger delays (So they don't all appear at once) */
+.hidden-projects .card:nth-child(1) { animation-delay: 0.1s; }
+.hidden-projects .card:nth-child(2) { animation-delay: 0.2s; }
+.hidden-projects .card:nth-child(3) { animation-delay: 0.3s; }
+.hidden-projects .card:nth-child(4) { animation-delay: 0.4s; }
+.hidden-projects .card:nth-child(5) { animation-delay: 0.5s; }
+.hidden-projects .card:nth-child(6) { animation-delay: 0.6s; }
+.hidden-projects .card:nth-child(7) { animation-delay: 0.7s; }
+.hidden-projects .card:nth-child(8) { animation-delay: 0.8s; }
+.hidden-projects .card:nth-child(9) { animation-delay: 0.9s; }
+
+/* "Breathing" Status Badges (For Research) */
+/* Define the keyframes for the pulse */
+@keyframes pulse-yellow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 194, 52, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 194, 52, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 194, 52, 0);
+    }
+}
+
+/* Apply it to the ongoing badge */
+.badge.ongoing {
+    animation: pulse-yellow 2s infinite;
+}
+
+
+
+
+
+/* 1. Define the 'Wobble' Animation Keyframes */
+@keyframes nice-shake {
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(40deg); }
+    10% { transform: rotate(-40deg); }
+    15% { transform: rotate(30deg); }
+    20% { transform: rotate(-30deg); }
+    25% { transform: rotate(15deg); }
+    30% { transform: rotate(-15deg); }
+    35% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); } /* Long pause to make it look clean */
+}
+
+/* 2. Apply it to the Research Icons */
+.research-card .icon {
+    /* 3s duration means: Shake for ~1s, Pause for ~2s */
+    animation: nice-shake 2s infinite ease-in-out;
+    transform-origin: center bottom; /* Shakes from the bottom like a pendulum */
+}
+
+/* Optional: Also apply to Contact/About icons if you want */
+.contact .row i, 
+.about .row i {
+    animation: nice-shake 4s infinite ease-in-out;
+    animation-delay: 1s; /* Offset so they don't all shake at the exact same time */
+}
+
+
+/* 1. Define the breathing animation */
+@keyframes bar-breathe {
+    0% {
+        width: 60%; 
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* 2. Update the Title Container */
+/* We use 'fit-content' so the percentage is relative to the text length, not the whole page */
+section .title {
+    width: -moz-fit-content;
+    width: fit-content; 
+    margin: 0 auto 50px auto; /* Keeps it centered */
+    display: block;
+}
+
+/* 3. Apply the animation to the bottom bar */
+section .title::before {
+    /* Set a minimum width so it doesn't disappear behind the subtitle text */
+    min-width: 140px; 
+    
+    /* Apply the loop: 3 seconds, infinite loop, smooth back-and-forth */
+    animation: bar-breathe 1.5s infinite alternate ease-in-out;
+}
+
+/* =========================================
+   SCROLLING HEX-CODE SEPARATOR
+   ========================================= */
+
+.hex-separator {
+    width: 100%;
+    height: 30px; /* Thin bar */
+    background: #050505; /* Almost black */
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none; /* User can't select the scrolling text */
+}
+
+/* The Moving Track */
+.hex-track {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll-left-to-right 20s linear infinite;
+}
+
+/* The Text Style */
+.hex-content {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--firstColor); /* Your theme Yellow */
+    opacity: 0.3; /* Dimmed so it's not distracting */
+    padding-right: 50px; /* Gap between the loops */
+    letter-spacing: 2px;
+}
+
+/* Matrix Green Variant (Optional - Uncomment to use Green instead of Yellow) */
+/* .hex-content {
+    color: #0f0; 
+    text-shadow: 0 0 5px #0f0;
+} 
+*/
+
+/* Animation: Left to Right */
+@keyframes scroll-left-to-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Hover Effect: Speed up or brighten */
+.hex-separator:hover .hex-content {
+    opacity: 0.8;
+    text-shadow: 0 0 8px var(--firstColor);
+}
+
+/* =========================================
+   THE CYBER-LUX TITLE (CENTERED VERSION)
+   ========================================= */
+
+.title-wrapper.center-mode {
+    position: relative;
+    display: flex;             /* Flexbox for easy centering */
+    flex-direction: column;
+    align-items: center;       /* Horizontal Center */
+    justify-content: center;
+    margin: 0 auto 50px auto;  /* Centered in the section */
+    width: fit-content;        /* Wrap tight around the text */
+}
+
+/* 1. The Tiny Tech Tag (Centered Top) */
+.tech-tag {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: var(--firstColor);
+    opacity: 0;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+    transform: translateY(10px); /* Start slightly down */
+    animation: slide-up-tag 0.8s forwards ease-out 0.2s;
+}
+
+/* 2. The Main Title Text */
+.classy-title {
+    font-family: var(--firstFont);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--firstColor);
+    letter-spacing: 4px; /* Increased spacing for elegance */
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-align: center;
+}
+
+/* Ghost Glow Effect */
+.classy-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--firstColor);
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.1);
+    animation: ghost-pulse 3s infinite;
+}
+
+/* 3. The Animated Underline */
+.title-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #333; /* The dark track */
+    margin-top: 10px;
+}
+
+/* The Moving Gold Bar (Expands from Center) */
+.title-line::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%; /* Start at center */
+    transform: translateX(-50%); /* Center alignment */
+    width: 0; /* Start width */
+    height: 3px;
+    background: var(--firstColor);
+    box-shadow: 0 0 15px var(--firstColor);
+    animation: draw-line-center 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 0.5s;
+}
+
+/* Symmetrical Decor Squares (Left & Right) */
+.title-line::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    /* Create two dots using shadow duplication */
+    left: 0;
+    width: 5px; 
+    height: 5px;
+    background: #444; 
+    box-shadow: calc(100% + var(--title-width, 200px)) 0 0 #444; /* Right dot */
+    opacity: 0;
+    animation: fade-in-dots 0.5s forwards 1.5s;
+}
+
+
+/* --- ANIMATIONS --- */
+
+@keyframes draw-line-center {
+    0% { width: 0; }
+    100% { width: 50%; } /* Expands to 50% of title width */
+}
+
+@keyframes slide-up-tag {
+    to { transform: translateY(0); opacity: 0.8; }
+}
+
+@keyframes fade-in-dots {
+    to { opacity: 1; }
+}
+
+@keyframes ghost-pulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.2; }
+}
+
+/* Hover Effect: Bar expands to 100% */
+.title-wrapper:hover .title-line::after {
+    width: 100%;
+    transition: width 0.4s ease;
 }
