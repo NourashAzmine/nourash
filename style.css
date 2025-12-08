@@ -1837,3 +1837,884 @@ section .title::before {
     width: 100%;
     transition: width 0.4s ease;
 }
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   Add this to the end of style.css
+   ========================================= */
+
+/* Tablet and Small Laptop (max-width: 1100px) */
+@media (max-width: 1100px) {
+    .about .about_content .left img {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+/* Tablets & Mobile Devices (max-width: 991px) */
+@media (max-width: 991px) {
+    .max_width {
+        padding: 0 50px;
+    }
+
+    /* --- Navbar & Mobile Menu --- */
+    .menu_btn {
+        display: block; /* Show hamburger icon */
+        z-index: 999;
+    }
+    
+    .menu_btn i.active {
+        /* Optional: Rotate icon when active */
+        transform: rotate(90deg); 
+    }
+
+    .nav_bar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%; /* Hide off-screen by default */
+        top: 0;
+        background: #111; /* Dark background for menu */
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .nav_bar .menu.active {
+        left: 0; /* Slide in when active */
+    }
+
+    .nav_bar .menu li {
+        display: block;
+    }
+
+    .nav_bar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
+    /* --- Home Section --- */
+    .home .home_content .text_2 {
+        font-size: 70px;
+    }
+    
+    .home .home_content .text_3 {
+        font-size: 35px;
+    }
+    
+    .home .home_content a {
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+
+    /* Hide the absolute positioned image on mobile to prevent overlap */
+    .images {
+        display: none;
+    }
+
+    /* --- About Section Stacking --- */
+    .about .about_content {
+        flex-direction: column;
+    }
+    
+    .about .about_content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+        width: 100%;
+    }
+    
+    .about .about_content .right {
+        flex: 100%;
+        width: 100%;
+    }
+
+    /* --- Research & Projects Grids --- */
+    .research-container, 
+    .project-grid,
+    .content-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 30px;
+    }
+
+    /* --- Contact Section Stacking --- */
+    .contact .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact .contact-content .column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Mobile Devices (max-width: 690px) */
+@media (max-width: 690px) {
+    .max_width {
+        padding: 0 23px;
+    }
+
+    .home .home_content .text_2 {
+        font-size: 60px;
+    }
+    
+    .home .home_content .text_3 {
+        font-size: 32px;
+    }
+    
+    .home .home_content a {
+        font-size: 20px;
+    }
+    
+    /* Adjust Project/Education Card Widths */
+    .edu .edu_content .card,
+    .projects .card {
+        width: 100%;
+    }
+}
+
+/* Small Mobile Devices (max-width: 500px) */
+@media (max-width: 500px) {
+    .home .home_content .text_2 {
+        font-size: 50px;
+    }
+    
+    .home .home_content .text_3 {
+        font-size: 27px;
+    }
+
+    .about .about_content .right .text,
+    .skills .skills-content .left .text {
+        font-size: 19px;
+    }
+    
+    /* Improve Contact Layout on Small Screens */
+    .contact .contact-content .row {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .contact .contact-content .row .info {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE & MOBILE DESIGN
+   (Only affects screens smaller than 991px)
+   ========================================= */
+
+@media (max-width: 991px) {
+    
+    /* --- 1. Navbar Animation & Layout --- */
+    .max_width {
+        padding: 0 50px;
+    }
+
+    /* Show the hamburger menu icon */
+    .menu_btn {
+        display: block; 
+        z-index: 999;
+    }
+
+    /* The Mobile Menu Container */
+    .nav_bar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%; /* Hidden off-screen to the left */
+        top: 0;
+        background: rgba(17, 17, 17, 0.98); /* Deep dark background */
+        backdrop-filter: blur(10px); /* Design Idea: Frosted Glass effect */
+        text-align: center;
+        padding-top: 80px;
+        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* "Bouncy" slide animation */
+        display: block;
+    }
+
+    /* When the menu is active (clicked) */
+    .nav_bar .menu.active {
+        left: 0; /* Slides into view */
+    }
+
+    .nav_bar .menu li {
+        display: block;
+        margin: 25px 0;
+        /* Start state for link animation */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    /* --- "Little Animation": Staggered Link Appearance --- */
+    /* When menu is active, links slide up and fade in one by one */
+    .nav_bar .menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* Delays for each link to create a "waterfall" effect */
+    .nav_bar .menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav_bar .menu.active li:nth-child(2) { transition-delay: 0.2s; }
+    .nav_bar .menu.active li:nth-child(3) { transition-delay: 0.3s; }
+    .nav_bar .menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    .nav_bar .menu.active li:nth-child(5) { transition-delay: 0.5s; }
+    .nav_bar .menu.active li:nth-child(6) { transition-delay: 0.6s; }
+
+    .nav_bar .menu li a {
+        display: inline-block;
+        font-size: 25px;
+        border: none; /* Remove border for cleaner mobile look */
+        background: transparent;
+        color: var(--secondColor);
+    }
+    
+    .nav_bar .menu li a:hover {
+        color: var(--firstColor);
+        box-shadow: none; /* Simplify hover on touch devices */
+    }
+
+    /* --- 2. Design Idea: Clean Header on Mobile --- */
+    /* Adjust text sizes so they don't break lines awkwardly */
+    .home .home_content .text_2 {
+        font-size: 70px;
+    }
+    .home .home_content .text_3 {
+        font-size: 35px;
+    }
+
+    /* Hide the absolute positioned profile image on mobile 
+       to prevent it from overlapping text or blocking clicks */
+    .images {
+        display: none; 
+    }
+
+    /* --- 3. Design Idea: Stacked Content Cards --- */
+    /* Instead of squeezing columns, we stack them vertically */
+    
+    /* About Section */
+    .about .about_content {
+        flex-direction: column;
+    }
+    .about .about_content .left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .about .about_content .right {
+        width: 100%;
+    }
+
+    /* Skills, Research, Projects Grid */
+    .content-grid, 
+    .research-container,
+    .project-grid, 
+    .edu .edu_content {
+        display: grid;
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 30px;
+    }
+    
+    .edu .edu_content .card {
+        width: 100%; /* Full width cards */
+        margin: 0 0 20px 0;
+    }
+
+    /* Contact Section */
+    .contact .contact-content {
+        flex-direction: column;
+    }
+    .contact .contact-content .column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* --- Extra Mobile Polish (Phones < 600px) --- */
+@media (max-width: 600px) {
+    .max_width {
+        padding: 0 23px;
+    }
+    
+    /* Design Idea: Smaller titles for better proportion */
+    .home .home_content .text_2 {
+        font-size: 50px;
+    }
+    .home .home_content .text_3 {
+        font-size: 22px;
+    }
+    
+    /* Design Idea: Center text on mobile for Home/About */
+    .home .home_content,
+    .about .about_content .right {
+        text-align: center;
+    }
+    
+    .about .about_content .right p {
+        text-align: center; /* Easier to read on small screens */
+    }
+}
+
+/* =========================================
+   RESPONSIVE & MOBILE DESIGN
+   (Only affects screens smaller than 991px)
+   ========================================= */
+
+@media (max-width: 991px) {
+    
+    /* --- 1. Navbar Animation & Layout --- */
+    .max_width {
+        padding: 0 50px;
+    }
+
+    /* Show the hamburger menu icon */
+    .menu_btn {
+        display: block; 
+        z-index: 999;
+    }
+
+    /* The Mobile Menu Container */
+    .nav_bar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%; /* Hidden off-screen to the left */
+        top: 0;
+        background: rgba(17, 17, 17, 0.98); /* Deep dark background */
+        backdrop-filter: blur(10px); /* Design Idea: Frosted Glass effect */
+        text-align: center;
+        padding-top: 80px;
+        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* "Bouncy" slide animation */
+        display: block;
+    }
+
+    /* When the menu is active (clicked) */
+    .nav_bar .menu.active {
+        left: 0; /* Slides into view */
+    }
+
+    .nav_bar .menu li {
+        display: block;
+        margin: 25px 0;
+        /* Start state for link animation */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    /* --- "Little Animation": Staggered Link Appearance --- */
+    /* When menu is active, links slide up and fade in one by one */
+    .nav_bar .menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* Delays for each link to create a "waterfall" effect */
+    .nav_bar .menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav_bar .menu.active li:nth-child(2) { transition-delay: 0.2s; }
+    .nav_bar .menu.active li:nth-child(3) { transition-delay: 0.3s; }
+    .nav_bar .menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    .nav_bar .menu.active li:nth-child(5) { transition-delay: 0.5s; }
+    .nav_bar .menu.active li:nth-child(6) { transition-delay: 0.6s; }
+
+    .nav_bar .menu li a {
+        display: inline-block;
+        font-size: 25px;
+        border: none; /* Remove border for cleaner mobile look */
+        background: transparent;
+        color: var(--secondColor);
+    }
+    
+    .nav_bar .menu li a:hover {
+        color: var(--firstColor);
+        box-shadow: none; /* Simplify hover on touch devices */
+    }
+
+    /* --- 2. Design Idea: Clean Header on Mobile --- */
+    /* Adjust text sizes so they don't break lines awkwardly */
+    .home .home_content .text_2 {
+        font-size: 70px;
+    }
+    .home .home_content .text_3 {
+        font-size: 35px;
+    }
+
+    /* Hide the absolute positioned profile image on mobile 
+       to prevent it from overlapping text or blocking clicks */
+    .images {
+        display: none; 
+    }
+
+    /* --- 3. Design Idea: Stacked Content Cards --- */
+    /* Instead of squeezing columns, we stack them vertically */
+    
+    /* About Section */
+    .about .about_content {
+        flex-direction: column;
+    }
+    .about .about_content .left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .about .about_content .right {
+        width: 100%;
+    }
+
+    /* Skills, Research, Projects Grid */
+    .content-grid, 
+    .research-container,
+    .project-grid, 
+    .edu .edu_content {
+        display: grid;
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 30px;
+    }
+    
+    .edu .edu_content .card {
+        width: 100%; /* Full width cards */
+        margin: 0 0 20px 0;
+    }
+
+    /* Contact Section */
+    .contact .contact-content {
+        flex-direction: column;
+    }
+    .contact .contact-content .column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* --- Extra Mobile Polish (Phones < 600px) --- */
+@media (max-width: 600px) {
+    .max_width {
+        padding: 0 23px;
+    }
+    
+    /* Design Idea: Smaller titles for better proportion */
+    .home .home_content .text_2 {
+        font-size: 50px;
+    }
+    .home .home_content .text_3 {
+        font-size: 22px;
+    }
+    
+    /* Design Idea: Center text on mobile for Home/About */
+    .home .home_content,
+    .about .about_content .right {
+        text-align: center;
+    }
+    
+    .about .about_content .right p {
+        text-align: center; /* Easier to read on small screens */
+    }
+}
+
+/* =========================================
+   1. OVERVIEW TEXT FIX (Desktop & Mobile)
+   ========================================= */
+
+/* Global Styling for the Overview Text */
+.text-content {
+    font-family: var(--bodyFont); /* Ensure clean font */
+    font-size: 17px;              /* Slightly larger for readability */
+    line-height: 1.8;             /* More space between lines */
+    color: var(--textColorLight); /* Ensure contrast */
+    text-align: justify;          /* Makes blocks look neat */
+    margin-bottom: 20px;
+    
+    /* Desktop Specific: Prevent lines from getting too long */
+    max-width: 95%; 
+}
+
+.text-content p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Ensure highlight text looks good */
+.highlight-yellow {
+    color: var(--firstColor);
+    font-weight: 600;
+}
+
+/* =========================================
+   2. CUSTOM SCROLLBAR (Mobile & Desktop)
+   ========================================= */
+
+/* The path (background) of the scrollbar */
+::-webkit-scrollbar {
+    width: 6px; /* Very thin and sleek */
+}
+
+/* The track (empty space) */
+::-webkit-scrollbar-track {
+    background: #111; /* Dark background to match site */
+}
+
+/* The handle (the moving part) */
+::-webkit-scrollbar-thumb {
+    background: var(--firstColor); /* Your Theme Yellow */
+    border-radius: 10px; /* Rounded edges */
+}
+
+/* Hover effect for scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background: #e6ac00; /* Slightly darker yellow on touch/hover */
+}
+
+/* =========================================
+   OVERVIEW BUTTON LOGIC
+   ========================================= */
+
+/* DESKTOP: Show all text, Hide Button */
+@media (min-width: 992px) {
+    #more-text { display: inline !important; }
+    #overview-btn { display: none !important; }
+}
+
+/* MOBILE: Hide text, Show Button */
+@media (max-width: 991px) {
+    #more-text { display: none; }
+    #overview-btn { 
+        display: inline-block; 
+        margin-top: 10px;
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    /* Ensure text doesn't hit the edges on mobile */
+    .text-content {
+        font-size: 16px; /* A bit smaller for mobile */
+        text-align: center; /* Easier to read on small screens */
+    }
+    div.column.skills-col{
+        padding: 0px;
+        text-align: center;
+    }
+    div.glass-card{
+        padding: 25px;
+        border-radius: 0;
+    }
+    div.skill-card{
+        padding: 10px;
+        border-radius: 0;
+    }
+    section#skills.skills-container{
+        padding: 40px 0px;
+        border-radius: 0px;
+    }
+    span.skill-chip{
+        border-radius: 5px;
+    }
+    /* Center Skill Chips Globally */
+.skill-chips {
+    display: flex;
+    flex-wrap: wrap;       /* Allows them to wrap to the next line */
+    justify-content: center; /* THIS centers them horizontally */
+    gap: 10px;             /* Adds space between the chips */
+}
+
+
+    
+}
+
+/* =========================================
+   ULTIMATE COMBO: FLOAT + HOLOGRAPHIC SCAN
+   ========================================= */
+
+/* 1. Define the Physics (Floating Up & Down) */
+@keyframes antigravity {
+    0% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); }
+    50% { transform: translateY(-6px); box-shadow: 0 15px 25px -5px rgba(255, 194, 52, 0.3); }
+    100% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); }
+}
+
+/* 2. Define the Scanner Light (Beam Moving Across) */
+@keyframes shine-sweep {
+    0% { left: -100%; }
+    20% { left: 200%; } /* Fast sweep across */
+    100% { left: 200%; } /* Wait for next loop */
+}
+
+/* 3. The Chip Styling */
+.skill-chip {
+    /* Layout Safety: inline-block respects your existing width/padding */
+    display: inline-block;
+    position: relative; /* Needed to trap the light beam inside */
+    overflow: hidden;   /* Cuts off the light when it leaves the box */
+    z-index: 1;
+    
+    /* Visuals (Dark Glass Look) */
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    
+    /* FLOAT Animation: 4s loop */
+    animation: antigravity 4s infinite ease-in-out;
+    transition: all 0.3s ease;
+}
+
+/* 4. The Glowing Line (The Beam) */
+.skill-chip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 50%;  /* Width of the beam */
+    height: 100%;
+    
+    /* The Beam Gradient: Transparent -> Gold -> Transparent */
+    background: linear-gradient(
+        120deg, 
+        transparent, 
+        rgba(255, 194, 52, 0.5), 
+        transparent
+    );
+    
+    transform: skewX(-25deg); /* Angle the beam */
+    z-index: -1; /* Place it behind the text */
+    
+    /* SCAN Animation: Runs every 5 seconds */
+    animation: shine-sweep 5s infinite linear;
+}
+
+/* 5. Randomize Delays (Organic Feel) */
+/* Floating delays */
+.skill-chip:nth-child(odd) { animation-delay: 0s; }
+.skill-chip:nth-child(even) { animation-delay: 2s; }
+/* Scanner delays (so they don't all flash at once) */
+.skill-chip:nth-child(odd)::before { animation-delay: 1s; }
+.skill-chip:nth-child(even)::before { animation-delay: 3s; }
+
+/* 6. Icon & Text Glow */
+.skill-chip i {
+    color: var(--firstColor);
+    margin-right: 8px;
+    text-shadow: 0 0 10px rgba(255, 194, 52, 0.4);
+}
+
+/* 7. Hover Effects (Active Mode) */
+.skill-chip:hover {
+    animation-play-state: paused; /* Stop floating so you can click */
+    transform: translateY(-10px) scale(1.02); /* Lift high */
+    box-shadow: 0 20px 30px -5px rgba(255, 194, 52, 0.5); /* Engine Glow */
+    border-color: var(--firstColor);
+    cursor: default;
+}
+
+/* On hover, stop the scanner and just light up the background slightly */
+.skill-chip:hover::before {
+    animation: none;
+    background: rgba(255, 194, 52, 0.1); 
+    left: 0; 
+    width: 100%;
+
+}
+
+/* =========================================
+   CONTACT SECTION: CONNECTIVITY HUB
+   ========================================= */
+
+.contact .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- 1. Contact Cards (Glassy Look) --- */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.contact-card {
+    background: #1a1a1a; 
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 15px; /* Softer corners */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 350px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden; /* Keeps the glow inside */
+}
+
+/* Card Typography */
+.contact-card .info h3 {
+    font-size: 18px;
+    color: var(--firstColor);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.contact-card .info span { font-size: 15px; color: #fff; display: block; }
+.contact-card .info .sub-text { font-size: 13px; color: #bbb; margin-top: 4px; }
+
+/* Icon Box */
+.contact-card .icon-box {
+    height: 55px; width: 55px;
+    background: #222;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--firstColor);
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+/* Hover: Lift & Glow */
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--firstColor);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.contact-card:hover .icon-box {
+    background: var(--firstColor);
+    color: #111;
+    box-shadow: 0 0 15px var(--firstColor);
+}
+
+/* --- 2. Social Hub (With Animations) --- */
+.social-connect { text-align: center; margin-top: 20px; }
+.social-connect h3 { font-size: 22px; color: #fff; margin-bottom: 25px; }
+
+.social-icons {
+    display: flex;
+    gap: 25px; /* More space for the pulse */
+    justify-content: center;
+}
+
+.social-btn {
+    height: 55px; width: 55px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Pulse Animation Definition */
+@keyframes ripple {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
+    100% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+}
+
+
+
+/* --- Mobile Fixes --- */
+@media (max-width: 991px) {
+    .contact-card { width: 100%; border-radius: 0;}
+    .contact-grid { flex-direction: column; border-radius: 0;}
+    .social-icons { gap: 15px; }
+    .social-btn { height: 45px; width: 45px; font-size: 20px; }
+}
+/* Specific Brand Colors on Hover */
+.social-btn:hover {
+    transform: translateY(-5px);
+    animation: ripple 1s linear infinite; /* Ripple Effect */
+}
+
+/* WhatsApp Green */
+.social-btn.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+/* Facebook Blue */
+.social-btn.facebook:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
+}
+/* LinkedIn Blue */
+.social-btn.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
+}
+/* GitHub Grey/White */
+.social-btn.github:hover {
+    background: #333;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   ANIMATION: SUBTLE "ALIVE" SHAKE (LOOP)
+   ========================================= */
+
+/* 1. Define the rhythmic motion */
+@keyframes floatShake {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-2px) rotate(0.5deg); } /* Slight lift & tilt right */
+    50% { transform: translateY(0) rotate(0deg); } /* Back to center */
+    75% { transform: translateY(-2px) rotate(-0.5deg); } /* Slight lift & tilt left */
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* 2. Apply it to the cards */
+.projects .card {
+    /* Existing styles... */
+    /* Add this animation line: */
+    /* 6s duration makes it very slow and calm */
+    animation: floatShake 6s ease-in-out infinite;
+    
+    /* Ensure the transform origin is center so it tilts naturally */
+    transform-origin: center center;
+}
+
+/* 3. Randomize the timing */
+/* This prevents all cards from moving in perfect unison (which looks robotic) */
+.projects .card:nth-child(odd) {
+    animation-duration: 7s; /* Slower */
+    animation-delay: 0s;
+}
+
+.projects .card:nth-child(even) {
+    animation-duration: 5s; /* Faster */
+    animation-delay: 1s;
+}
+
+.projects .card:nth-child(3n) {
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+/* 4. Pause on Hover */
+/* When the user tries to read/click, stop the motion */
+.projects .card:hover {
+    animation-play-state: paused;
+    /* Apply your existing hover lift effect here if separate */
+    transform: translateY(-10px) !important; /* Override animation position */
+}
+
+
+/* =========================================
+   FIX: SKILL CHIP ICON VISIBILITY
+   ========================================= */
+
+/* When hovering the chip, force the ICON (i) to turn Black */
+.skill-chip:hover i {
+    color: #000000 !important; /* Solid Black */
+    text-shadow: none !important; /* Remove glow for clarity */
+    filter: none !important; /* Remove any blur/brightness filters */
+}
+span.skill-chip {
+    max-width: 147px;
+    padding: 9px;
+}
