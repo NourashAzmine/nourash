@@ -1,21 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
-:root
-{
+
+:root {
     --firstColor: #ffc234;
     --secondColor: #fff;
     --thirdColor: #111;
     --fourthColor: #222;
-    --fifthColor:#caad3c;
+    --fifthColor: #caad3c;
     --firstFont: 'Raleway', sans-serif;
     --secondFont: 'Roboto', sans-serif;
     --thirdFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --accentColor: #ffc234;  /* Yellow (Titles, Buttons) */
-    --pageBg: #ffffff;       /* White (Page Background) */
-    --cardBg: #1f1f1f;       /* Dark Grey (Main Card Background) */
-    --subCardBg: #111111;    /* Black (Skill Grid Cards) */
-    --chipBg: #2d2d2d;       /* Dark Grey (Skill Pills) */
-    --textColorDark: #000000;/* Black (Text on White) */
-    --textColorLight: #e0e0e0;/* White/Grey (Text on Dark) */
+    --accentColor: #ffc234;
+    /* Yellow (Titles, Buttons) */
+    --pageBg: #ffffff;
+    /* White (Page Background) */
+    --cardBg: #1f1f1f;
+    /* Dark Grey (Main Card Background) */
+    --subCardBg: #111111;
+    /* Black (Skill Grid Cards) */
+    --chipBg: #2d2d2d;
+    /* Dark Grey (Skill Pills) */
+    --textColorDark: #000000;
+    /* Black (Text on White) */
+    --textColorLight: #e0e0e0;
+    /* White/Grey (Text on Dark) */
 
     /* Fonts */
     --titleFont: 'Raleway', sans-serif;
@@ -29,35 +36,37 @@
 
 /* Track (Background) */
 ::-webkit-scrollbar-track {
-    background: #111; /* Dark background */
+    background: #111;
+    /* Dark background */
 }
 
 /* Handle (The moving part) */
 ::-webkit-scrollbar-thumb {
-    background: #333; /* Dark Grey */
+    background: #333;
+    /* Dark Grey */
     border-radius: 5px;
     border: 1px solid #111;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--firstColor); /* Turns Yellow on hover */
+    background: var(--firstColor);
+    /* Turns Yellow on hover */
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    
+
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-.max_width
-{
+.max_width {
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
@@ -65,8 +74,7 @@ html{
 
 /* navbar styling */
 
-.nav_bar
-{
+.nav_bar {
     position: fixed;
     width: 100%;
     padding: 30px 0;
@@ -74,42 +82,39 @@ html{
     transition: all 0.3 ease;
     /* background-color: var(--firstColor);     */
 }
-.nav_bar.sticky
-{
+
+.nav_bar.sticky {
     padding: 10px 0;
-    background-color: var(--firstColor);     
+    background-color: var(--firstColor);
 
 }
-.nav_bar .max_width
-{
+
+.nav_bar .max_width {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.nav_bar .logo a
-{
+.nav_bar .logo a {
     color: var(--secondColor);
     font-size: 35px;
     font-weight: 700;
 }
 
-.nav_bar .logo a span
-{
+.nav_bar .logo a span {
     color: var(--firstColor);
     transition: all 0.3 ease;
 }
 
-.nav_bar.sticky .logo a span
-{
+.nav_bar.sticky .logo a span {
     color: var(--secondColor);
 }
 
-.nav_bar .menu li
-{
+.nav_bar .menu li {
     list-style: none;
     display: inline-block;
 }
+
 /* .nav_bar .menu li a
 {
     color: var(--secondColor);
@@ -120,12 +125,11 @@ html{
 
 } */
 
-.nav_bar .menu li a
-{
+.nav_bar .menu li a {
     display: block;
     background: var(--firstColor);
     color: var(--fourthColor);
-    font-weight: 550; 
+    font-weight: 550;
     font-size: 15px;
     padding: 8px 12px;
     margin-top: 0px;
@@ -136,13 +140,12 @@ html{
 
 }
 
-.nav_bar .menu li a:hover
-{
+.nav_bar .menu li a:hover {
     color: var(--secondColor);
     background: none;
     box-shadow: 0 0 5px #ffc000,
-                0 0 20px #ffc000,
-                0 0 60px var(--fifthColor); 
+        0 0 20px #ffc000,
+        0 0 60px var(--fifthColor);
 }
 
 /* .nav_bar.sticky .menu li a:hover
@@ -150,24 +153,22 @@ html{
     color: var(--secondColor)
 } */
 
-.nav_bar.sticky .menu li a
-{
+.nav_bar.sticky .menu li a {
     color: var(--secondColor);
     font-weight: 600;
 }
 
- .nav_bar.sticky .menu li a:hover
-{
+.nav_bar.sticky .menu li a:hover {
     color: var(--secondColor);
-    background:var(--firstColor);
+    background: var(--firstColor);
     border: 2px solid var(--secondColor);
     box-shadow: 0 0 5px var(--secondColor),
-                0 0 150px var(--secondColor);
-} 
+        0 0 150px var(--secondColor);
+}
+
 /* menu btn styling */
 
-.menu_btn
-{
+.menu_btn {
     color: var(--secondColor);
     font-size: 23px;
     cursor: pointer;
@@ -177,7 +178,7 @@ html{
 /* home section styling */
 
 
-.images{
+.images {
     width: 45%;
     height: 80%;
     position: absolute;
@@ -185,7 +186,7 @@ html{
     right: 100px;
 }
 
-.images img{
+.images img {
     height: 100%;
     position: absolute;
     left: 70%;
@@ -194,11 +195,11 @@ html{
     transition: bottom 1s, left 1s;
 }
 
-.images:hover .shape{
+.images:hover .shape {
     bottom: 40px;
 }
 
-.images:hover .photo{
+.images:hover .photo {
     left: 60%;
 }
 
@@ -214,7 +215,7 @@ html{
 
 .scroll-progress-bar {
     height: 4px;
-    background: whitesmoke; 
+    background: whitesmoke;
     width: 0%;
     transition: width 0.1s ease;
 }
@@ -229,7 +230,8 @@ html{
     z-index: 999;
     transform: translate(-50%, -50%);
     transition: all 0.1s ease;
-    display: none; /* Only show on desktop if you prefer */
+    display: none;
+    /* Only show on desktop if you prefer */
 }
 
 .cursor2 {
@@ -246,16 +248,19 @@ html{
 
 /* Only enable on devices with a mouse (not touch) */
 @media (pointer: fine) {
-    .cursor, .cursor2 { display: block; }
+
+    .cursor,
+    .cursor2 {
+        display: block;
+    }
 }
 
-.home
-{
+.home {
     display: flex;
     background: url(img/banner2.jpg) no-repeat center;
     background-position: top;
     object-fit: contain;
-    
+
     /* background: rgb(131,58,180);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 93%, rgba(252,176,69,1) 100%); */
     height: 100vh;
@@ -264,34 +269,32 @@ html{
     font-family: var(--firstFont);
 }
 
-.home .max_width
-{
+.home .max_width {
     margin: auto 0 auto 40px;
 }
-.home .home_content .text_1
-{
+
+.home .home_content .text_1 {
     font-size: 27px;
 }
-.home .home_content .text_2
-{
+
+.home .home_content .text_2 {
     font-size: 75px;
     font-weight: 600;
     margin-left: -3px;
 }
-.home .home_content .text_3
-{
+
+.home .home_content .text_3 {
     font-size: 40px;
     margin: 5px 0;
 }
-.home .home_content .text_3 span
-{
+
+.home .home_content .text_3 span {
     color: var(--fifthColor);
     font-weight: 500;
 }
 
 /* all similar styling content */
-button
-{
+button {
     display: inline-block;
     background: var(--firstColor);
     color: var(--secondColor);
@@ -304,32 +307,35 @@ button
     transition: all 0.3s ease;
 }
 
-button:hover
-{
+button:hover {
     color: var(--firstColor);
     background: none;
     box-shadow: 0 0 5px #ffc000,
-                0 0 20px #ffc000,
-                0 0 60px var(--fifthColor);
+        0 0 20px #ffc000,
+        0 0 60px var(--fifthColor);
     cursor: pointer;
 }
-#more, #more2 {
+
+#more,
+#more2 {
     display: none;
 }
-section
-{
+
+section {
     padding: 40px 0;
 }
-.about, .edu, .skills, .contact
-{
+
+.about,
+.edu,
+.skills,
+.contact {
     font-family: var(--thirdFont);
 }
 
 
 
 .edu .edu_content,
-.skills .skills-content
-{
+.skills .skills-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -368,7 +374,8 @@ section
 .core-image-wrapper {
     width: 260px;
     height: 260px;
-    border-radius: 50%; /* Circle */
+    border-radius: 50%;
+    /* Circle */
     overflow: hidden;
     position: relative;
     z-index: 2;
@@ -380,7 +387,8 @@ section
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(30%) contrast(1.1); /* Slight sci-fi look */
+    filter: grayscale(30%) contrast(1.1);
+    /* Slight sci-fi look */
 }
 
 /* The Laser Scanner Line */
@@ -407,10 +415,25 @@ section
 }
 
 @keyframes scan-down {
-    0%, 100% { top: 0%; opacity: 0; }
-    10% { opacity: 1; }
-    50% { top: 100%; opacity: 1; }
-    90% { opacity: 1; }
+
+    0%,
+    100% {
+        top: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
 }
 
 /* Rotating Reactor Rings */
@@ -437,18 +460,28 @@ section
     animation: spin-left 6s linear infinite;
 }
 
-@keyframes spin-right { 100% { transform: rotate(360deg); } }
-@keyframes spin-left { 100% { transform: rotate(-360deg); } }
+@keyframes spin-right {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-left {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 
 
 /* --- RIGHT SIDE: Data Modules (Accordion) --- */
 .data-module {
     background: var(--cardBg);
-    border-left: 3px solid #333; /* Default inactive border */
+    border-left: 3px solid #333;
+    /* Default inactive border */
     margin-bottom: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Header (Always Visible) */
@@ -472,7 +505,8 @@ section
 }
 
 .mod-title {
-    font-family: 'Courier New', monospace; /* Terminal Font */
+    font-family: 'Courier New', monospace;
+    /* Terminal Font */
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
@@ -487,7 +521,8 @@ section
 
 /* Content (Hidden by default, Expands on Hover) */
 .module-content {
-    max-height: 0; /* Collapsed */
+    max-height: 0;
+    /* Collapsed */
     opacity: 0;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease;
     padding: 0 20px;
@@ -519,11 +554,13 @@ section
 
 /* 1. When hovering the module, activate the header */
 .data-module:hover {
-    border-left: 3px solid var(--firstColor); /* Yellow Border */
+    border-left: 3px solid var(--firstColor);
+    /* Yellow Border */
 }
 
 .data-module:hover .module-header {
-    background: rgba(255, 194, 52, 0.1); /* Subtle Yellow bg */
+    background: rgba(255, 194, 52, 0.1);
+    /* Subtle Yellow bg */
 }
 
 .data-module:hover .mod-title {
@@ -543,14 +580,23 @@ section
 
 /* 2. Expand the content */
 .data-module:hover .module-content {
-    max-height: 200px; /* Large enough to fit content */
+    max-height: 200px;
+    /* Large enough to fit content */
     opacity: 1;
 }
 
 @keyframes blink-anim {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Responsive */
@@ -558,14 +604,14 @@ section
     .hud-container {
         flex-direction: column;
     }
+
     .hud-column.left {
         margin-bottom: 40px;
     }
 }
 
 
-section .title 
-{
+section .title {
     position: relative;
     text-align: center;
     font-size: 40px;
@@ -575,8 +621,7 @@ section .title
     font-family: var(--firstFont);
 }
 
-section .title::before
-{
+section .title::before {
     content: "";
     position: absolute;
     bottom: 0px;
@@ -587,8 +632,7 @@ section .title::before
     transform: translateX(-50%);
 }
 
-section .title::after
-{
+section .title::after {
     font-family: var(--secondFont);
     position: absolute;
     bottom: -12px;
@@ -599,24 +643,25 @@ section .title::after
     background: var(--secondColor);
     transform: translateX(-50%);
 }
+
 /* about section styling */
 
-.about .title::after
-{
+.about .title::after {
     content: "who I am";
 }
+
 /* .about-me{
     padding: 60px;
     background-color: var(--chipBg);
 } */
 
-.about .about_content 
-{
+.about .about_content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
+
 /* .about .about_content .right
 {
     background-color: var(--subCardBg);
@@ -624,69 +669,67 @@ section .title::after
 }
  */
 
-.about .about_content .left
-{
+.about .about_content .left {
     width: 45%;
 }
-.about .about_content .left img
-{
+
+.about .about_content .left img {
     height: 380px;
     width: 380px;
     object-fit: cover;
     border-radius: 10px;
 }
-.about .about_content .right
-{
+
+.about .about_content .right {
     width: 55%;
 }
 
-.about .about_content .right .text
-{
+.about .about_content .right .text {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.about .about_content .right .text span
-{
+.about .about_content .right .text span {
     color: var(--fifthColor);
 }
-.about .about_content .right p
-{
+
+.about .about_content .right p {
     text-align: justify;
 }
 
-.about .about_content .column
-{
+.about .about_content .column {
     width: 50%;
 }
-h2.title.hacker-text{
+
+h2.title.hacker-text {
     margin-bottom: 0px;
 }
-section#about.about{
+
+section#about.about {
     padding-bottom: 0px;
 }
-div.hub-container{
+
+div.hub-container {
     padding-top: 0px;
 }
+
 /* edu section styling */
-.edu{
+.edu {
     color: var(--secondColor);
     background-color: var(--thirdColor);
 }
 
-.edu .title::before
-{
+.edu .title::before {
     background: var(--secondColor);
 }
 
-.edu .edu_content .card
-{
+.edu .edu_content .card {
     display: inline-block;
     width: calc(32% - 18px);
     background: var(--fourthColor);
     justify-content: center;
-    text-align: center; 
+    text-align: center;
     border-radius: 6px;
     margin: 12px;
     padding: 12px 12px;
@@ -694,24 +737,21 @@ div.hub-container{
     transition: all 0.3 ease;
 }
 
-.edu .edu_content .card .box
-{
+.edu .edu_content .card .box {
     transition: all 0.3 ease;
 }
-.edu .edu_content .card:hover
-{
+
+.edu .edu_content .card:hover {
     background: var(--firstColor);
     box-shadow: 0 0 5px #ffc000,
-                0 0 20px #ffc000;
+        0 0 20px #ffc000;
 }
 
-.edu .edu_content .card:hover .box
-{
+.edu .edu_content .card:hover .box {
     transform: scale(1.1);
 }
 
-.edu .edu_content .card .box h5
-{
+.edu .edu_content .card .box h5 {
     font-size: 20px;
     font-family: var(--firstFont);
     color: var(--firstColor);
@@ -719,8 +759,7 @@ div.hub-container{
 }
 
 
-.edu .edu_content .card .box h4:nth-child(3)
-{
+.edu .edu_content .card .box h4:nth-child(3) {
     font-size: 15px;
     font-family: var(--firstFont);
     color: var(--firstColor);
@@ -728,13 +767,13 @@ div.hub-container{
 }
 
 .edu .edu_content .card:hover .box h5,
-.edu .edu_content .card .box h4:nth-child(3)
-{
+.edu .edu_content .card .box h4:nth-child(3) {
     font-size: 15px;
     font-family: var(--firstFont);
     color: var(--secondColor);
     font-weight: 700;
 }
+
 /* skills section styling */
 .skills-container {
     width: 100%;
@@ -756,8 +795,9 @@ div.hub-container{
     padding-bottom: 20px;
     font-family: var(--firstFont);
     width: -moz-fit-content;
-    width: fit-content; 
-    margin: 0 auto 30px auto; /* Keeps it centered */
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    /* Keeps it centered */
     display: block;
 }
 
@@ -769,15 +809,17 @@ div.hub-container{
     background: var(--textColorDark);
     margin: 10px auto 0;
     /* Set a minimum width so it doesn't disappear behind the subtitle text */
-    min-width: 60px; 
-    
+    min-width: 60px;
+
     /* Apply the loop: 3 seconds, infinite loop, smooth back-and-forth */
     animation: bar-breathe 2s infinite alternate ease-in-out;
 }
+
 .text-content {
     padding: 10px;
 }
-.text-content p{
+
+.text-content p {
     font-size: 10rem;
 }
 
@@ -790,13 +832,14 @@ div.hub-container{
 /* --- THE DARK CARD (Glass/Matte Look) --- */
 .glass-card {
     background: var(--subCardBg);
-    color: var(--textColorLight); /* Force text inside to be white */
+    color: var(--textColorLight);
+    /* Force text inside to be white */
     border-radius: 20px;
     padding: 60px;
     max-width: 1500px;
     width: 100%;
     /* Soft shadow to lift it off the white background */
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* --- HEADERS INSIDE CARD --- */
@@ -804,14 +847,17 @@ div.hub-container{
     font-family: var(--titleFont);
     font-weight: 700;
     font-size: 1.8rem;
-    color: var(--accentColor); /* Yellow */
+    color: var(--accentColor);
+    /* Yellow */
     margin-bottom: 20px;
     text-align: center;
 }
+
 @keyframes expandLine {
     0% {
         width: 50%;
     }
+
     100% {
         width: 100%;
     }
@@ -824,7 +870,7 @@ div.hub-container{
     height: 4px;
     background: var(--accentColor);
     margin: 10px auto 0;
-    
+
     /* The Animation Logic */
     /* Name | Duration | Loop | Direction | Smoothing */
     animation: expandLine 1.5s infinite alternate ease-in-out;
@@ -856,21 +902,25 @@ div.hub-container{
     color: var(--accentColor);
     font-weight: 600;
 }
+
 .highlight-gold {
     color: var(--fifthColor);
     font-weight: 600;
 }
 
-#more-text { display: none; }
+#more-text {
+    display: none;
+}
 
-.skills-col{
+.skills-col {
     padding: 0px 50px 0px 0px;
 }
 
 /* --- RIGHT COLUMN (TECHNICAL ARSENAL GRID) --- */
 .skill-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns like image_effcfb.png */
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns like image_effcfb.png */
     gap: 20px;
 }
 
@@ -889,8 +939,9 @@ div.hub-container{
     font-family: var(--titleFont);
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--accentColor); /* Yellow Title */
-    
+    color: var(--accentColor);
+    /* Yellow Title */
+
 }
 
 /* The Chips/Pills Container */
@@ -903,10 +954,12 @@ div.hub-container{
 /* The Individual Pill (Dark Grey) */
 .skill-chip {
     font-family: var(--bodyFont);
-    background-color: var(--chipBg); /* #2d2d2d */
+    background-color: var(--chipBg);
+    /* #2d2d2d */
     color: #ffffff;
     padding: 8px 10px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
+    /* Pill shape */
     font-size: 0.8rem;
     font-weight: 500;
     display: flex;
@@ -918,7 +971,8 @@ div.hub-container{
 
 .skill-chip:hover {
     background: var(--accentColor);
-    color: #000; /* Black text on yellow hover */
+    color: #000;
+    /* Black text on yellow hover */
 
 }
 
@@ -942,41 +996,67 @@ div.hub-container{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 /* --- SPOTLIGHT EFFECT FOR SKILL CARDS --- */
 
 /* 1. When the user hovers over the CONTAINER (the whole grid)... */
 .skill-grid-container:hover .skill-card {
-    opacity: 0.3;              /* Make all cards semi-transparent */
-    filter: blur(3px);         /* Blur them out */
-    transform: scale(0.98);    /* Shrink them slightly for depth */
-    transition: all 0.4s ease; /* smooth transition */
+    opacity: 0.3;
+    /* Make all cards semi-transparent */
+    filter: blur(3px);
+    /* Blur them out */
+    transform: scale(0.98);
+    /* Shrink them slightly for depth */
+    transition: all 0.4s ease;
+    /* smooth transition */
 }
 
 /* 2. ...EXCEPT the specific card being hovered */
 .skill-grid-container .skill-card:hover {
-    opacity: 1;                /* Restore full visibility */
-    filter: blur(0);           /* Remove blur */
-    transform: scale(1.05);    /* Scale up (Pop out) */
-    box-shadow: 0 0 25px rgba(255, 194, 52, 0.5); /* Strong Yellow Glow */
-    border-color: var(--accentColor); 
-    z-index: 2;                /* Ensure it sits on top of others */
+    opacity: 1;
+    /* Restore full visibility */
+    filter: blur(0);
+    /* Remove blur */
+    transform: scale(1.05);
+    /* Scale up (Pop out) */
+    box-shadow: 0 0 25px rgba(255, 194, 52, 0.5);
+    /* Strong Yellow Glow */
+    border-color: var(--accentColor);
+    z-index: 2;
+    /* Ensure it sits on top of others */
     cursor: pointer;
 }
+
 .glow-button:hover {
     background: var(--accentColor);
-    color: #000; /* Black text on yellow hover */
+    color: #000;
+    /* Black text on yellow hover */
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
-    .content-grid { grid-template-columns: 1fr; gap: 40px; }
-    .skill-grid-container { grid-template-columns: 1fr 1fr; }
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .skill-grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-    .glass-card { padding: 30px; }
-    .outside-title { font-size: 2.5rem; }
-    .skill-grid-container { grid-template-columns: 1fr; }
+    .glass-card {
+        padding: 30px;
+    }
+
+    .outside-title {
+        font-size: 2.5rem;
+    }
+
+    .skill-grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -984,7 +1064,8 @@ div.hub-container{
    Research Section Styling
    ========================================= */
 .research {
-    background-color: var(--thirdColor); /* Dark Background */
+    background-color: var(--thirdColor);
+    /* Dark Background */
     color: var(--secondColor);
     font-family: var(--thirdFont);
 }
@@ -1008,7 +1089,8 @@ div.hub-container{
     background: var(--fourthColor);
     padding: 25px;
     border-radius: 10px;
-    border-left: 5px solid var(--firstColor); /* Yellow Accent Border */
+    border-left: 5px solid var(--firstColor);
+    /* Yellow Accent Border */
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1079,7 +1161,7 @@ div.hub-container{
     font-weight: 500;
 }
 
-.research-card .conference, 
+.research-card .conference,
 .research-card .doi {
     font-size: 13px;
     font-style: italic;
@@ -1098,19 +1180,28 @@ div.hub-container{
 
 /* 1. When hovering over the MAIN CONTAINER, dim ALL cards inside */
 .research-container:hover .research-card {
-    opacity: 0.3;               /* Fade out */
-    filter: blur(2px);          /* Blur slightly */
-    transform: scale(0.98);     /* Shrink slightly */
-    transition: all 0.4s ease;  /* Smooth transition */
+    opacity: 0.3;
+    /* Fade out */
+    filter: blur(2px);
+    /* Blur slightly */
+    transform: scale(0.98);
+    /* Shrink slightly */
+    transition: all 0.4s ease;
+    /* Smooth transition */
 }
 
 /* 2. EXCEPTION: The specific card you are hovering over */
 .research-container .research-card:hover {
-    opacity: 1;                 /* Fully visible */
-    filter: blur(0);            /* clear focus */
-    transform: scale(1.03) translateY(-5px); /* Scale up and move up */
-    box-shadow: 0 10px 30px rgba(255, 194, 52, 0.3); /* Strong Yellow Glow */
-    z-index: 5;                 /* Ensure it floats above others */
+    opacity: 1;
+    /* Fully visible */
+    filter: blur(0);
+    /* clear focus */
+    transform: scale(1.03) translateY(-5px);
+    /* Scale up and move up */
+    box-shadow: 0 10px 30px rgba(255, 194, 52, 0.3);
+    /* Strong Yellow Glow */
+    z-index: 5;
+    /* Ensure it floats above others */
     /* cursor: pointer; */
 }
 
@@ -1119,7 +1210,7 @@ div.hub-container{
 /* =========================================
    Projects Section Styling
    ========================================= */
-   /* Project Grid Layout */
+/* Project Grid Layout */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1129,12 +1220,14 @@ div.hub-container{
 
 /* Hidden Projects Container */
 .hidden-projects {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     /* When visible, it will use the grid layout of its parent or sub-grid */
-    grid-column: 1 / -1; /* Span full width to contain its own grid items */
-    
+    grid-column: 1 / -1;
+    /* Span full width to contain its own grid items */
+
     /* Internal Grid for the hidden items */
-    display: none; 
+    display: none;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     width: 100%;
@@ -1147,8 +1240,15 @@ div.hub-container{
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Load More Button Styling */
@@ -1160,7 +1260,8 @@ div.hub-container{
 #loadMoreBtn {
     display: inline-block;
     background: var(--firstColor);
-    color: var(--fourthColor); /* Dark text on yellow btn */
+    color: var(--fourthColor);
+    /* Dark text on yellow btn */
     font-size: 18px;
     font-weight: 600;
     padding: 12px 30px;
@@ -1177,10 +1278,13 @@ div.hub-container{
 }
 
 .magnetic {
-    transition: transform 0.1s ease; /* Very fast response for physics feel */
+    transition: transform 0.1s ease;
+    /* Very fast response for physics feel */
 }
+
 .projects {
-    background: var(--pageBg); /* White Background */
+    background: var(--pageBg);
+    /* White Background */
     color: var(--fourthColor);
     font-family: var(--thirdFont);
 }
@@ -1196,7 +1300,8 @@ div.hub-container{
 }
 
 .projects .card {
-    background: var(--cardBg); /* Dark Card */
+    background: var(--cardBg);
+    /* Dark Card */
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
@@ -1236,7 +1341,8 @@ div.hub-container{
 
 .projects .card:hover .text,
 .projects .card:hover p {
-    color: var(--fourthColor); /* Text turns black on hover (white bg) */
+    color: var(--fourthColor);
+    /* Text turns black on hover (white bg) */
 }
 
 /* Tech Stack Chips inside Projects */
@@ -1268,20 +1374,29 @@ div.hub-container{
 
 /* 1. When hovering over the MAIN GRID, dim ALL cards (including hidden ones) */
 .project-grid:hover .card {
-    opacity: 0.9;               /* Make them see-through */
-    filter: blur(0.2px);          /* Blur them out */
-    transform: scale(0.98);     /* Shrink slightly */
-    transition: all 0.4s ease;  /* Smooth fade */
+    opacity: 0.9;
+    /* Make them see-through */
+    filter: blur(0.2px);
+    /* Blur them out */
+    transform: scale(0.98);
+    /* Shrink slightly */
+    transition: all 0.4s ease;
+    /* Smooth fade */
 }
 
 /* 2. EXCEPTION: The specific card you are hovering over */
 /* We use !important on transform to ensure it overrides your existing hover scale */
 .project-grid .card:hover {
-    opacity: 1;                 /* Fully visible */
-    filter: blur(0);            /* Crisp focus */
-    transform: scale(1.05) !important; /* Pop out larger than before */
-    z-index: 2;                 /* Bring to front */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Add depth shadow */
+    opacity: 1;
+    /* Fully visible */
+    filter: blur(0);
+    /* Crisp focus */
+    transform: scale(1.05) !important;
+    /* Pop out larger than before */
+    z-index: 2;
+    /* Bring to front */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* Add depth shadow */
     cursor: pointer;
 }
 
@@ -1290,6 +1405,7 @@ div.hub-container{
     .research-container {
         grid-template-columns: 1fr;
     }
+
     .projects .carousel {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
@@ -1299,54 +1415,61 @@ div.hub-container{
 
 
 /* contact section styling */
-.contact{
+.contact {
     background-color: var(--thirdColor);
     color: var(--secondColor);
 }
-.contact .contact-content
-{
+
+.contact .contact-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
-.contact .title::after{
+
+.contact .title::after {
     content: "get in touch";
 }
-.contact .contact-content .column{
+
+.contact .contact-content .column {
     width: calc(50% - 30px);
 }
-.contact .contact-content .text{
+
+.contact .contact-content .text {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.contact .contact-content .icons{
+.contact .contact-content .icons {
     margin: 10px 0;
 }
-.contact .contact-content .row{
+
+.contact .contact-content .row {
     display: flex;
     height: 65px;
     align-items: center;
 }
-.contact .contact-content .row .info{
+
+.contact .contact-content .row .info {
     margin-left: 30px;
 }
-.contact .contact-content .row i{
+
+.contact .contact-content .row i {
     font-size: 25px;
     color: var(--fifthColor);
 }
-.contact .contact-content .info .head{
+
+.contact .contact-content .info .head {
     font-weight: 500;
 }
-.contact .contact-content .info .sub-title{
+
+.contact .contact-content .info .sub-title {
     color: var(--secondColor);
     font-weight: 600;
 }
 
-.contact .title::before
-{
+.contact .title::before {
     content: "";
     position: absolute;
     bottom: 0px;
@@ -1357,8 +1480,7 @@ div.hub-container{
     transform: translateX(-50%);
 }
 
-.contact .title::after
-{
+.contact .title::after {
     font-family: var(--secondFont);
     position: absolute;
     bottom: -12px;
@@ -1369,101 +1491,93 @@ div.hub-container{
     background: var(--thirdColor);
     transform: translateX(-50%);
 }
+
 /* footer section styling */
-footer{
+footer {
     background: var(--firstColor);
-    
+
     padding: 15px 23px;
     color: var(--fourthColor);
     font-weight: 600;
     text-align: center;
     font-family: var(--thirdFont);
 }
-footer span a{
+
+footer span a {
     color: var(--firstColor);
     text-decoration: none;
 }
 
-footer span a:hover{
+footer span a:hover {
     text-decoration: underline;
 }
 
 /* responsive media query */
-@media (max-width: 1300px)
-{
-    .home .max_width
-    {
+@media (max-width: 1300px) {
+    .home .max_width {
         margin-left: 0px;
     }
 }
 
-@media (max-width: 1104px)
-{
-    .about .about_content .left img
-    {
+@media (max-width: 1104px) {
+    .about .about_content .left img {
         height: 380px;
         width: 380px;
         object-fit: cover;
         border-radius: 10px;
     }
-    .images
-    {
+
+    .images {
         visibility: hidden;
     }
-    
+
 }
 
-@media (max-width: 991px)
-{
-    .max_width
-    {
+@media (max-width: 991px) {
+    .max_width {
         padding: 0 50px;
     }
 
 }
-@media (max-width: 947px)
-{
-    .max_width
-    {
+
+@media (max-width: 947px) {
+    .max_width {
         padding: 0 50px;
     }
-    
-    .menu_btn
-    {
+
+    .menu_btn {
         display: block;
         z-index: 999;
     }
 
-    .menu_btn i.active:before
-    {
+    .menu_btn i.active:before {
         content: "x";
         font-family: var(--firstFont);
     }
-    .nav_bar .menu
-    {
+
+    .nav_bar .menu {
         position: fixed;
         height: 100vh;
         width: 100%;
         left: -100%;
         top: 0;
         background: var(--thirdColor);
-        
+
         text-align: center;
-        padding-top: 80px; 
+        padding-top: 80px;
         transition: all 0.3s ease;
 
     }
-   
-    .nav_bar .menu.active
-    {
+
+    .nav_bar .menu.active {
         left: 0;
     }
-    .nav_bar .menu li
-    {
+
+    .nav_bar .menu li {
         display: block;
     }
-    .nav_bar .menu li a
-    {
+
+    .nav_bar .menu li a {
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
@@ -1472,85 +1586,83 @@ footer span a:hover{
         color: var(--firstColor);
         border: none;
     }
-    
-    .home .home_content .text_2
-    {
+
+    .home .home_content .text_2 {
         font-size: 70px;
     }
-    .home .home_content .text_3
-    {
+
+    .home .home_content .text_3 {
         font-size: 35px;
     }
-    .max_width
-    {
+
+    .max_width {
         max-width: 800px;
     }
-    .about .about_content .column
-    {
+
+    .about .about_content .column {
         width: 50%;
     }
-    .about .about_content .left
-    {
+
+    .about .about_content .left {
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .about_content .left
-    {
+
+    .about .about_content .left {
         flex: 100%;
     }
-    .edu .edu_content .card
-    {
+
+    .edu .edu_content .card {
         width: calc(50% - 30px);
         margin-bottom: auto;
     }
+
     .skills .skills-content .column,
-    .contact .contact-content .column{
+    .contact .contact-content .column {
         width: 100%;
         margin-bottom: 35px;
     }
 }
-@media (max-width: 690px)
-{
-    .max_width
-    {
+
+@media (max-width: 690px) {
+    .max_width {
         padding: 0 23px;
     }
-    .home .home_content .text_2
-    {
+
+    .home .home_content .text_2 {
         font-size: 60px;
     }
-    .home .home_content .text_3
-    {
+
+    .home .home_content .text_3 {
         font-size: 32px;
     }
-    .edu .edu_content .card
-    {
+
+    .edu .edu_content .card {
         width: calc(50% - 30px);
         margin-bottom: 20px;
     }
 }
 
-@media (max-width: 500px)
-{
-    .max_width
-    {
+@media (max-width: 500px) {
+    .max_width {
         padding: 0 23px;
     }
-    .home .home_content .text_2
-    {
+
+    .home .home_content .text_2 {
         font-size: 50px;
     }
-    .home .home_content .text_3
-    {
+
+    .home .home_content .text_3 {
         font-size: 27px;
     }
+
     .about .about_content .right .text,
-    .skills .skills-content .left .text{
+    .skills .skills-content .left .text {
         font-size: 19px;
     }
-    .edu .edu_content .card
-    {
+
+    .edu .edu_content .card {
         width: calc(50% - 20px);
         margin-bottom: 20px;
         font-size: smaller;
@@ -1562,12 +1674,14 @@ footer span a:hover{
     opacity: 0;
     animation: fadeSlideUp 0.5s ease forwards;
 }
+
 /* Staggered Animation for "Load More" */
 @keyframes fadeSlideUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1575,15 +1689,41 @@ footer span a:hover{
 }
 
 /* Stagger delays (So they don't all appear at once) */
-.hidden-projects .card:nth-child(1) { animation-delay: 0.1s; }
-.hidden-projects .card:nth-child(2) { animation-delay: 0.2s; }
-.hidden-projects .card:nth-child(3) { animation-delay: 0.3s; }
-.hidden-projects .card:nth-child(4) { animation-delay: 0.4s; }
-.hidden-projects .card:nth-child(5) { animation-delay: 0.5s; }
-.hidden-projects .card:nth-child(6) { animation-delay: 0.6s; }
-.hidden-projects .card:nth-child(7) { animation-delay: 0.7s; }
-.hidden-projects .card:nth-child(8) { animation-delay: 0.8s; }
-.hidden-projects .card:nth-child(9) { animation-delay: 0.9s; }
+.hidden-projects .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hidden-projects .card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hidden-projects .card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hidden-projects .card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.hidden-projects .card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.hidden-projects .card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.hidden-projects .card:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.hidden-projects .card:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.hidden-projects .card:nth-child(9) {
+    animation-delay: 0.9s;
+}
 
 /* "Breathing" Status Badges (For Research) */
 /* Define the keyframes for the pulse */
@@ -1591,9 +1731,11 @@ footer span a:hover{
     0% {
         box-shadow: 0 0 0 0 rgba(255, 194, 52, 0.7);
     }
+
     70% {
         box-shadow: 0 0 0 10px rgba(255, 194, 52, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(255, 194, 52, 0);
     }
@@ -1610,37 +1752,68 @@ footer span a:hover{
 
 /* 1. Define the 'Wobble' Animation Keyframes */
 @keyframes nice-shake {
-    0% { transform: rotate(0deg); }
-    5% { transform: rotate(40deg); }
-    10% { transform: rotate(-40deg); }
-    15% { transform: rotate(30deg); }
-    20% { transform: rotate(-30deg); }
-    25% { transform: rotate(15deg); }
-    30% { transform: rotate(-15deg); }
-    35% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); } /* Long pause to make it look clean */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    5% {
+        transform: rotate(40deg);
+    }
+
+    10% {
+        transform: rotate(-40deg);
+    }
+
+    15% {
+        transform: rotate(30deg);
+    }
+
+    20% {
+        transform: rotate(-30deg);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    30% {
+        transform: rotate(-15deg);
+    }
+
+    35% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+    /* Long pause to make it look clean */
 }
 
 /* 2. Apply it to the Research Icons */
 .research-card .icon {
     /* 3s duration means: Shake for ~1s, Pause for ~2s */
     animation: nice-shake 2s infinite ease-in-out;
-    transform-origin: center bottom; /* Shakes from the bottom like a pendulum */
+    transform-origin: center bottom;
+    /* Shakes from the bottom like a pendulum */
 }
 
 /* Optional: Also apply to Contact/About icons if you want */
-.contact .row i, 
+.contact .row i,
 .about .row i {
     animation: nice-shake 4s infinite ease-in-out;
-    animation-delay: 1s; /* Offset so they don't all shake at the exact same time */
+    animation-delay: 1s;
+    /* Offset so they don't all shake at the exact same time */
 }
 
 
 /* 1. Define the breathing animation */
 @keyframes bar-breathe {
     0% {
-        width: 60%; 
+        width: 60%;
     }
+
     100% {
         width: 100%;
     }
@@ -1650,16 +1823,17 @@ footer span a:hover{
 /* We use 'fit-content' so the percentage is relative to the text length, not the whole page */
 section .title {
     width: -moz-fit-content;
-    width: fit-content; 
-    margin: 0 auto 50px auto; /* Keeps it centered */
+    width: fit-content;
+    margin: 0 auto 50px auto;
+    /* Keeps it centered */
     display: block;
 }
 
 /* 3. Apply the animation to the bottom bar */
 section .title::before {
     /* Set a minimum width so it doesn't disappear behind the subtitle text */
-    min-width: 140px; 
-    
+    min-width: 140px;
+
     /* Apply the loop: 3 seconds, infinite loop, smooth back-and-forth */
     animation: bar-breathe 1.5s infinite alternate ease-in-out;
 }
@@ -1670,15 +1844,18 @@ section .title::before {
 
 .hex-separator {
     width: 100%;
-    height: 30px; /* Thin bar */
-    background: #050505; /* Almost black */
+    height: 30px;
+    /* Thin bar */
+    background: #050505;
+    /* Almost black */
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
-    user-select: none; /* User can't select the scrolling text */
+    user-select: none;
+    /* User can't select the scrolling text */
 }
 
 /* The Moving Track */
@@ -1694,9 +1871,12 @@ section .title::before {
     font-family: 'Courier New', monospace;
     font-size: 14px;
     font-weight: 600;
-    color: var(--firstColor); /* Your theme Yellow */
-    opacity: 0.3; /* Dimmed so it's not distracting */
-    padding-right: 50px; /* Gap between the loops */
+    color: var(--firstColor);
+    /* Your theme Yellow */
+    opacity: 0.3;
+    /* Dimmed so it's not distracting */
+    padding-right: 50px;
+    /* Gap between the loops */
     letter-spacing: 2px;
 }
 
@@ -1709,8 +1889,13 @@ section .title::before {
 
 /* Animation: Left to Right */
 @keyframes scroll-left-to-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0%); }
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 /* Hover Effect: Speed up or brighten */
@@ -1725,12 +1910,16 @@ section .title::before {
 
 .title-wrapper.center-mode {
     position: relative;
-    display: flex;             /* Flexbox for easy centering */
+    display: flex;
+    /* Flexbox for easy centering */
     flex-direction: column;
-    align-items: center;       /* Horizontal Center */
+    align-items: center;
+    /* Horizontal Center */
     justify-content: center;
-    margin: 0 auto 50px auto;  /* Centered in the section */
-    width: fit-content;        /* Wrap tight around the text */
+    margin: 0 auto 50px auto;
+    /* Centered in the section */
+    width: fit-content;
+    /* Wrap tight around the text */
 }
 
 /* 1. The Tiny Tech Tag (Centered Top) */
@@ -1742,7 +1931,8 @@ section .title::before {
     opacity: 0;
     margin-bottom: 5px;
     letter-spacing: 3px;
-    transform: translateY(10px); /* Start slightly down */
+    transform: translateY(10px);
+    /* Start slightly down */
     animation: slide-up-tag 0.8s forwards ease-out 0.2s;
 }
 
@@ -1752,7 +1942,8 @@ section .title::before {
     font-size: 40px;
     font-weight: 700;
     color: var(--firstColor);
-    letter-spacing: 4px; /* Increased spacing for elegance */
+    letter-spacing: 4px;
+    /* Increased spacing for elegance */
     position: relative;
     z-index: 2;
     margin: 0;
@@ -1763,7 +1954,8 @@ section .title::before {
 .classy-title::before {
     content: attr(data-text);
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     text-align: center;
     color: var(--firstColor);
@@ -1778,7 +1970,8 @@ section .title::before {
     position: relative;
     width: 100%;
     height: 1px;
-    background: #333; /* The dark track */
+    background: #333;
+    /* The dark track */
     margin-top: 10px;
 }
 
@@ -1787,9 +1980,12 @@ section .title::before {
     content: '';
     position: absolute;
     top: -1px;
-    left: 50%; /* Start at center */
-    transform: translateX(-50%); /* Center alignment */
-    width: 0; /* Start width */
+    left: 50%;
+    /* Start at center */
+    transform: translateX(-50%);
+    /* Center alignment */
+    width: 0;
+    /* Start width */
     height: 3px;
     background: var(--firstColor);
     box-shadow: 0 0 15px var(--firstColor);
@@ -1803,10 +1999,11 @@ section .title::before {
     top: -2px;
     /* Create two dots using shadow duplication */
     left: 0;
-    width: 5px; 
+    width: 5px;
     height: 5px;
-    background: #444; 
-    box-shadow: calc(100% + var(--title-width, 200px)) 0 0 #444; /* Right dot */
+    background: #444;
+    box-shadow: calc(100% + var(--title-width, 200px)) 0 0 #444;
+    /* Right dot */
     opacity: 0;
     animation: fade-in-dots 0.5s forwards 1.5s;
 }
@@ -1815,21 +2012,40 @@ section .title::before {
 /* --- ANIMATIONS --- */
 
 @keyframes draw-line-center {
-    0% { width: 0; }
-    100% { width: 50%; } /* Expands to 50% of title width */
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 50%;
+    }
+
+    /* Expands to 50% of title width */
 }
 
 @keyframes slide-up-tag {
-    to { transform: translateY(0); opacity: 0.8; }
+    to {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
 }
 
 @keyframes fade-in-dots {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes ghost-pulse {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 0.2; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
 }
 
 /* Hover Effect: Bar expands to 100% */
@@ -1859,29 +2075,33 @@ section .title::before {
 
     /* --- Navbar & Mobile Menu --- */
     .menu_btn {
-        display: block; /* Show hamburger icon */
+        display: block;
+        /* Show hamburger icon */
         z-index: 999;
     }
-    
+
     .menu_btn i.active {
         /* Optional: Rotate icon when active */
-        transform: rotate(90deg); 
+        transform: rotate(90deg);
     }
 
     .nav_bar .menu {
         position: fixed;
         height: 100vh;
         width: 100%;
-        left: -100%; /* Hide off-screen by default */
+        left: -100%;
+        /* Hide off-screen by default */
         top: 0;
-        background: #111; /* Dark background for menu */
+        background: #111;
+        /* Dark background for menu */
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
     }
 
     .nav_bar .menu.active {
-        left: 0; /* Slide in when active */
+        left: 0;
+        /* Slide in when active */
     }
 
     .nav_bar .menu li {
@@ -1898,11 +2118,11 @@ section .title::before {
     .home .home_content .text_2 {
         font-size: 70px;
     }
-    
+
     .home .home_content .text_3 {
         font-size: 35px;
     }
-    
+
     .home .home_content a {
         font-size: 23px;
         padding: 10px 30px;
@@ -1917,24 +2137,25 @@ section .title::before {
     .about .about_content {
         flex-direction: column;
     }
-    
+
     .about .about_content .left {
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
         width: 100%;
     }
-    
+
     .about .about_content .right {
         flex: 100%;
         width: 100%;
     }
 
     /* --- Research & Projects Grids --- */
-    .research-container, 
+    .research-container,
     .project-grid,
     .content-grid {
-        grid-template-columns: 1fr; /* Single column */
+        grid-template-columns: 1fr;
+        /* Single column */
         gap: 30px;
     }
 
@@ -1942,7 +2163,7 @@ section .title::before {
     .contact .contact-content {
         flex-direction: column;
     }
-    
+
     .contact .contact-content .column {
         width: 100%;
         margin-bottom: 30px;
@@ -1958,15 +2179,15 @@ section .title::before {
     .home .home_content .text_2 {
         font-size: 60px;
     }
-    
+
     .home .home_content .text_3 {
         font-size: 32px;
     }
-    
+
     .home .home_content a {
         font-size: 20px;
     }
-    
+
     /* Adjust Project/Education Card Widths */
     .edu .edu_content .card,
     .projects .card {
@@ -1979,7 +2200,7 @@ section .title::before {
     .home .home_content .text_2 {
         font-size: 50px;
     }
-    
+
     .home .home_content .text_3 {
         font-size: 27px;
     }
@@ -1988,7 +2209,7 @@ section .title::before {
     .skills .skills-content .left .text {
         font-size: 19px;
     }
-    
+
     /* Improve Contact Layout on Small Screens */
     .contact .contact-content .row {
         flex-direction: column;
@@ -1996,7 +2217,7 @@ section .title::before {
         height: auto;
         padding: 10px 0;
     }
-    
+
     .contact .contact-content .row .info {
         margin-left: 0;
         margin-top: 10px;
@@ -2009,7 +2230,7 @@ section .title::before {
    ========================================= */
 
 @media (max-width: 991px) {
-    
+
     /* --- 1. Navbar Animation & Layout --- */
     .max_width {
         padding: 0 50px;
@@ -2017,7 +2238,7 @@ section .title::before {
 
     /* Show the hamburger menu icon */
     .menu_btn {
-        display: block; 
+        display: block;
         z-index: 999;
     }
 
@@ -2026,19 +2247,24 @@ section .title::before {
         position: fixed;
         height: 100vh;
         width: 100%;
-        left: -100%; /* Hidden off-screen to the left */
+        left: -100%;
+        /* Hidden off-screen to the left */
         top: 0;
-        background: rgba(17, 17, 17, 0.98); /* Deep dark background */
-        backdrop-filter: blur(10px); /* Design Idea: Frosted Glass effect */
+        background: rgba(17, 17, 17, 0.98);
+        /* Deep dark background */
+        backdrop-filter: blur(10px);
+        /* Design Idea: Frosted Glass effect */
         text-align: center;
         padding-top: 80px;
-        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* "Bouncy" slide animation */
+        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        /* "Bouncy" slide animation */
         display: block;
     }
 
     /* When the menu is active (clicked) */
     .nav_bar .menu.active {
-        left: 0; /* Slides into view */
+        left: 0;
+        /* Slides into view */
     }
 
     .nav_bar .menu li {
@@ -2056,25 +2282,45 @@ section .title::before {
         opacity: 1;
         transform: translateY(0);
     }
+
     /* Delays for each link to create a "waterfall" effect */
-    .nav_bar .menu.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav_bar .menu.active li:nth-child(2) { transition-delay: 0.2s; }
-    .nav_bar .menu.active li:nth-child(3) { transition-delay: 0.3s; }
-    .nav_bar .menu.active li:nth-child(4) { transition-delay: 0.4s; }
-    .nav_bar .menu.active li:nth-child(5) { transition-delay: 0.5s; }
-    .nav_bar .menu.active li:nth-child(6) { transition-delay: 0.6s; }
+    .nav_bar .menu.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav_bar .menu.active li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .nav_bar .menu.active li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .nav_bar .menu.active li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .nav_bar .menu.active li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .nav_bar .menu.active li:nth-child(6) {
+        transition-delay: 0.6s;
+    }
 
     .nav_bar .menu li a {
         display: inline-block;
         font-size: 25px;
-        border: none; /* Remove border for cleaner mobile look */
+        border: none;
+        /* Remove border for cleaner mobile look */
         background: transparent;
         color: var(--secondColor);
     }
-    
+
     .nav_bar .menu li a:hover {
         color: var(--firstColor);
-        box-shadow: none; /* Simplify hover on touch devices */
+        box-shadow: none;
+        /* Simplify hover on touch devices */
     }
 
     /* --- 2. Design Idea: Clean Header on Mobile --- */
@@ -2082,6 +2328,7 @@ section .title::before {
     .home .home_content .text_2 {
         font-size: 70px;
     }
+
     .home .home_content .text_3 {
         font-size: 35px;
     }
@@ -2089,38 +2336,42 @@ section .title::before {
     /* Hide the absolute positioned profile image on mobile 
        to prevent it from overlapping text or blocking clicks */
     .images {
-        display: none; 
+        display: none;
     }
 
     /* --- 3. Design Idea: Stacked Content Cards --- */
     /* Instead of squeezing columns, we stack them vertically */
-    
+
     /* About Section */
     .about .about_content {
         flex-direction: column;
     }
+
     .about .about_content .left {
         width: 100%;
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
     }
+
     .about .about_content .right {
         width: 100%;
     }
 
     /* Skills, Research, Projects Grid */
-    .content-grid, 
+    .content-grid,
     .research-container,
-    .project-grid, 
+    .project-grid,
     .edu .edu_content {
         display: grid;
-        grid-template-columns: 1fr; /* Force single column */
+        grid-template-columns: 1fr;
+        /* Force single column */
         gap: 30px;
     }
-    
+
     .edu .edu_content .card {
-        width: 100%; /* Full width cards */
+        width: 100%;
+        /* Full width cards */
         margin: 0 0 20px 0;
     }
 
@@ -2128,6 +2379,7 @@ section .title::before {
     .contact .contact-content {
         flex-direction: column;
     }
+
     .contact .contact-content .column {
         width: 100%;
         margin-bottom: 30px;
@@ -2139,23 +2391,25 @@ section .title::before {
     .max_width {
         padding: 0 23px;
     }
-    
+
     /* Design Idea: Smaller titles for better proportion */
     .home .home_content .text_2 {
         font-size: 50px;
     }
+
     .home .home_content .text_3 {
         font-size: 22px;
     }
-    
+
     /* Design Idea: Center text on mobile for Home/About */
     .home .home_content,
     .about .about_content .right {
         text-align: center;
     }
-    
+
     .about .about_content .right p {
-        text-align: center; /* Easier to read on small screens */
+        text-align: center;
+        /* Easier to read on small screens */
     }
 }
 
@@ -2165,7 +2419,7 @@ section .title::before {
    ========================================= */
 
 @media (max-width: 991px) {
-    
+
     /* --- 1. Navbar Animation & Layout --- */
     .max_width {
         padding: 0 50px;
@@ -2173,7 +2427,7 @@ section .title::before {
 
     /* Show the hamburger menu icon */
     .menu_btn {
-        display: block; 
+        display: block;
         z-index: 999;
     }
 
@@ -2182,19 +2436,24 @@ section .title::before {
         position: fixed;
         height: 100vh;
         width: 100%;
-        left: -100%; /* Hidden off-screen to the left */
+        left: -100%;
+        /* Hidden off-screen to the left */
         top: 0;
-        background: rgba(17, 17, 17, 0.98); /* Deep dark background */
-        backdrop-filter: blur(10px); /* Design Idea: Frosted Glass effect */
+        background: rgba(17, 17, 17, 0.98);
+        /* Deep dark background */
+        backdrop-filter: blur(10px);
+        /* Design Idea: Frosted Glass effect */
         text-align: center;
         padding-top: 80px;
-        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* "Bouncy" slide animation */
+        transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        /* "Bouncy" slide animation */
         display: block;
     }
 
     /* When the menu is active (clicked) */
     .nav_bar .menu.active {
-        left: 0; /* Slides into view */
+        left: 0;
+        /* Slides into view */
     }
 
     .nav_bar .menu li {
@@ -2212,25 +2471,45 @@ section .title::before {
         opacity: 1;
         transform: translateY(0);
     }
+
     /* Delays for each link to create a "waterfall" effect */
-    .nav_bar .menu.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav_bar .menu.active li:nth-child(2) { transition-delay: 0.2s; }
-    .nav_bar .menu.active li:nth-child(3) { transition-delay: 0.3s; }
-    .nav_bar .menu.active li:nth-child(4) { transition-delay: 0.4s; }
-    .nav_bar .menu.active li:nth-child(5) { transition-delay: 0.5s; }
-    .nav_bar .menu.active li:nth-child(6) { transition-delay: 0.6s; }
+    .nav_bar .menu.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav_bar .menu.active li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .nav_bar .menu.active li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .nav_bar .menu.active li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .nav_bar .menu.active li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .nav_bar .menu.active li:nth-child(6) {
+        transition-delay: 0.6s;
+    }
 
     .nav_bar .menu li a {
         display: inline-block;
         font-size: 25px;
-        border: none; /* Remove border for cleaner mobile look */
+        border: none;
+        /* Remove border for cleaner mobile look */
         background: transparent;
         color: var(--secondColor);
     }
-    
+
     .nav_bar .menu li a:hover {
         color: var(--firstColor);
-        box-shadow: none; /* Simplify hover on touch devices */
+        box-shadow: none;
+        /* Simplify hover on touch devices */
     }
 
     /* --- 2. Design Idea: Clean Header on Mobile --- */
@@ -2238,6 +2517,7 @@ section .title::before {
     .home .home_content .text_2 {
         font-size: 70px;
     }
+
     .home .home_content .text_3 {
         font-size: 35px;
     }
@@ -2245,38 +2525,42 @@ section .title::before {
     /* Hide the absolute positioned profile image on mobile 
        to prevent it from overlapping text or blocking clicks */
     .images {
-        display: none; 
+        display: none;
     }
 
     /* --- 3. Design Idea: Stacked Content Cards --- */
     /* Instead of squeezing columns, we stack them vertically */
-    
+
     /* About Section */
     .about .about_content {
         flex-direction: column;
     }
+
     .about .about_content .left {
         width: 100%;
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
     }
+
     .about .about_content .right {
         width: 100%;
     }
 
     /* Skills, Research, Projects Grid */
-    .content-grid, 
+    .content-grid,
     .research-container,
-    .project-grid, 
+    .project-grid,
     .edu .edu_content {
         display: grid;
-        grid-template-columns: 1fr; /* Force single column */
+        grid-template-columns: 1fr;
+        /* Force single column */
         gap: 30px;
     }
-    
+
     .edu .edu_content .card {
-        width: 100%; /* Full width cards */
+        width: 100%;
+        /* Full width cards */
         margin: 0 0 20px 0;
     }
 
@@ -2284,6 +2568,7 @@ section .title::before {
     .contact .contact-content {
         flex-direction: column;
     }
+
     .contact .contact-content .column {
         width: 100%;
         margin-bottom: 30px;
@@ -2295,23 +2580,25 @@ section .title::before {
     .max_width {
         padding: 0 23px;
     }
-    
+
     /* Design Idea: Smaller titles for better proportion */
     .home .home_content .text_2 {
         font-size: 50px;
     }
+
     .home .home_content .text_3 {
         font-size: 22px;
     }
-    
+
     /* Design Idea: Center text on mobile for Home/About */
     .home .home_content,
     .about .about_content .right {
         text-align: center;
     }
-    
+
     .about .about_content .right p {
-        text-align: center; /* Easier to read on small screens */
+        text-align: center;
+        /* Easier to read on small screens */
     }
 }
 
@@ -2321,19 +2608,25 @@ section .title::before {
 
 /* Global Styling for the Overview Text */
 .text-content {
-    font-family: var(--bodyFont); /* Ensure clean font */
-    font-size: 17px;              /* Slightly larger for readability */
-    line-height: 1.8;             /* More space between lines */
-    color: var(--textColorLight); /* Ensure contrast */
-    text-align: justify;          /* Makes blocks look neat */
+    font-family: var(--bodyFont);
+    /* Ensure clean font */
+    font-size: 17px;
+    /* Slightly larger for readability */
+    line-height: 1.8;
+    /* More space between lines */
+    color: var(--textColorLight);
+    /* Ensure contrast */
+    text-align: justify;
+    /* Makes blocks look neat */
     margin-bottom: 20px;
-    
+
     /* Desktop Specific: Prevent lines from getting too long */
-    max-width: 95%; 
+    max-width: 95%;
 }
 
 .text-content p {
-    margin-bottom: 15px; /* Space between paragraphs */
+    margin-bottom: 15px;
+    /* Space between paragraphs */
 }
 
 /* Ensure highlight text looks good */
@@ -2348,23 +2641,28 @@ section .title::before {
 
 /* The path (background) of the scrollbar */
 ::-webkit-scrollbar {
-    width: 6px; /* Very thin and sleek */
+    width: 6px;
+    /* Very thin and sleek */
 }
 
 /* The track (empty space) */
 ::-webkit-scrollbar-track {
-    background: #111; /* Dark background to match site */
+    background: #111;
+    /* Dark background to match site */
 }
 
 /* The handle (the moving part) */
 ::-webkit-scrollbar-thumb {
-    background: var(--firstColor); /* Your Theme Yellow */
-    border-radius: 10px; /* Rounded edges */
+    background: var(--firstColor);
+    /* Your Theme Yellow */
+    border-radius: 10px;
+    /* Rounded edges */
 }
 
 /* Hover effect for scrollbar */
 ::-webkit-scrollbar-thumb:hover {
-    background: #e6ac00; /* Slightly darker yellow on touch/hover */
+    background: #e6ac00;
+    /* Slightly darker yellow on touch/hover */
 }
 
 /* =========================================
@@ -2373,54 +2671,73 @@ section .title::before {
 
 /* DESKTOP: Show all text, Hide Button */
 @media (min-width: 992px) {
-    #more-text { display: inline !important; }
-    #overview-btn { display: none !important; }
+    #more-text {
+        display: inline !important;
+    }
+
+    #overview-btn {
+        display: none !important;
+    }
 }
 
 /* MOBILE: Hide text, Show Button */
 @media (max-width: 991px) {
-    #more-text { display: none; }
-    #overview-btn { 
-        display: inline-block; 
+    #more-text {
+        display: none;
+    }
+
+    #overview-btn {
+        display: inline-block;
         margin-top: 10px;
         padding: 8px 20px;
         font-size: 14px;
     }
-    
+
     /* Ensure text doesn't hit the edges on mobile */
     .text-content {
-        font-size: 16px; /* A bit smaller for mobile */
-        text-align: center; /* Easier to read on small screens */
+        font-size: 16px;
+        /* A bit smaller for mobile */
+        text-align: center;
+        /* Easier to read on small screens */
     }
-    div.column.skills-col{
+
+    div.column.skills-col {
         padding: 0px;
         text-align: center;
     }
-    div.glass-card{
+
+    div.glass-card {
         padding: 25px;
         border-radius: 0;
     }
-    div.skill-card{
+
+    div.skill-card {
         padding: 10px;
         border-radius: 0;
     }
-    section#skills.skills-container{
+
+    section#skills.skills-container {
         padding: 40px 0px;
         border-radius: 0px;
     }
-    span.skill-chip{
+
+    span.skill-chip {
         border-radius: 5px;
     }
+
     /* Center Skill Chips Globally */
-.skill-chips {
-    display: flex;
-    flex-wrap: wrap;       /* Allows them to wrap to the next line */
-    justify-content: center; /* THIS centers them horizontally */
-    gap: 10px;             /* Adds space between the chips */
-}
+    .skill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allows them to wrap to the next line */
+        justify-content: center;
+        /* THIS centers them horizontally */
+        gap: 10px;
+        /* Adds space between the chips */
+    }
 
 
-    
+
 }
 
 /* =========================================
@@ -2429,31 +2746,55 @@ section .title::before {
 
 /* 1. Define the Physics (Floating Up & Down) */
 @keyframes antigravity {
-    0% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); }
-    50% { transform: translateY(-6px); box-shadow: 0 15px 25px -5px rgba(255, 194, 52, 0.3); }
-    100% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); }
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    }
+
+    50% {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 25px -5px rgba(255, 194, 52, 0.3);
+    }
+
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    }
 }
 
 /* 2. Define the Scanner Light (Beam Moving Across) */
 @keyframes shine-sweep {
-    0% { left: -100%; }
-    20% { left: 200%; } /* Fast sweep across */
-    100% { left: 200%; } /* Wait for next loop */
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    /* Fast sweep across */
+    100% {
+        left: 200%;
+    }
+
+    /* Wait for next loop */
 }
 
 /* 3. The Chip Styling */
 .skill-chip {
     /* Layout Safety: inline-block respects your existing width/padding */
     display: inline-block;
-    position: relative; /* Needed to trap the light beam inside */
-    overflow: hidden;   /* Cuts off the light when it leaves the box */
+    position: relative;
+    /* Needed to trap the light beam inside */
+    overflow: hidden;
+    /* Cuts off the light when it leaves the box */
     z-index: 1;
-    
+
     /* Visuals (Dark Glass Look) */
     background: #1a1a1a;
     border: 1px solid #333;
     color: #fff;
-    
+
     /* FLOAT Animation: 4s loop */
     animation: antigravity 4s infinite ease-in-out;
     transition: all 0.3s ease;
@@ -2464,32 +2805,45 @@ section .title::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%; /* Start off-screen */
-    width: 50%;  /* Width of the beam */
+    left: -100%;
+    /* Start off-screen */
+    width: 50%;
+    /* Width of the beam */
     height: 100%;
-    
+
     /* The Beam Gradient: Transparent -> Gold -> Transparent */
-    background: linear-gradient(
-        120deg, 
-        transparent, 
-        rgba(255, 194, 52, 0.5), 
-        transparent
-    );
-    
-    transform: skewX(-25deg); /* Angle the beam */
-    z-index: -1; /* Place it behind the text */
-    
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 194, 52, 0.5),
+            transparent);
+
+    transform: skewX(-25deg);
+    /* Angle the beam */
+    z-index: -1;
+    /* Place it behind the text */
+
     /* SCAN Animation: Runs every 5 seconds */
     animation: shine-sweep 5s infinite linear;
 }
 
 /* 5. Randomize Delays (Organic Feel) */
 /* Floating delays */
-.skill-chip:nth-child(odd) { animation-delay: 0s; }
-.skill-chip:nth-child(even) { animation-delay: 2s; }
+.skill-chip:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.skill-chip:nth-child(even) {
+    animation-delay: 2s;
+}
+
 /* Scanner delays (so they don't all flash at once) */
-.skill-chip:nth-child(odd)::before { animation-delay: 1s; }
-.skill-chip:nth-child(even)::before { animation-delay: 3s; }
+.skill-chip:nth-child(odd)::before {
+    animation-delay: 1s;
+}
+
+.skill-chip:nth-child(even)::before {
+    animation-delay: 3s;
+}
 
 /* 6. Icon & Text Glow */
 .skill-chip i {
@@ -2500,9 +2854,12 @@ section .title::before {
 
 /* 7. Hover Effects (Active Mode) */
 .skill-chip:hover {
-    animation-play-state: paused; /* Stop floating so you can click */
-    transform: translateY(-10px) scale(1.02); /* Lift high */
-    box-shadow: 0 20px 30px -5px rgba(255, 194, 52, 0.5); /* Engine Glow */
+    animation-play-state: paused;
+    /* Stop floating so you can click */
+    transform: translateY(-10px) scale(1.02);
+    /* Lift high */
+    box-shadow: 0 20px 30px -5px rgba(255, 194, 52, 0.5);
+    /* Engine Glow */
     border-color: var(--firstColor);
     cursor: default;
 }
@@ -2510,8 +2867,8 @@ section .title::before {
 /* On hover, stop the scanner and just light up the background slightly */
 .skill-chip:hover::before {
     animation: none;
-    background: rgba(255, 194, 52, 0.1); 
-    left: 0; 
+    background: rgba(255, 194, 52, 0.1);
+    left: 0;
     width: 100%;
 
 }
@@ -2537,10 +2894,11 @@ section .title::before {
 }
 
 .contact-card {
-    background: #1a1a1a; 
+    background: #1a1a1a;
     border: 1px solid #333;
     padding: 25px;
-    border-radius: 15px; /* Softer corners */
+    border-radius: 15px;
+    /* Softer corners */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -2549,7 +2907,8 @@ section .title::before {
     transition: all 0.3s ease;
     text-decoration: none;
     position: relative;
-    overflow: hidden; /* Keeps the glow inside */
+    overflow: hidden;
+    /* Keeps the glow inside */
 }
 
 /* Card Typography */
@@ -2559,16 +2918,30 @@ section .title::before {
     margin-bottom: 5px;
     font-weight: 600;
 }
-.contact-card .info span { font-size: 15px; color: #fff; display: block; }
-.contact-card .info .sub-text { font-size: 13px; color: #bbb; margin-top: 4px; }
+
+.contact-card .info span {
+    font-size: 15px;
+    color: #fff;
+    display: block;
+}
+
+.contact-card .info .sub-text {
+    font-size: 13px;
+    color: #bbb;
+    margin-top: 4px;
+}
 
 /* Icon Box */
 .contact-card .icon-box {
-    height: 55px; width: 55px;
+    height: 55px;
+    width: 55px;
     background: #222;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; color: var(--firstColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--firstColor);
     border: 1px solid #444;
     transition: all 0.3s ease;
 }
@@ -2577,8 +2950,9 @@ section .title::before {
 .contact-card:hover {
     transform: translateY(-5px);
     border-color: var(--firstColor);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
+
 .contact-card:hover .icon-box {
     background: var(--firstColor);
     color: #111;
@@ -2586,20 +2960,32 @@ section .title::before {
 }
 
 /* --- 2. Social Hub (With Animations) --- */
-.social-connect { text-align: center; margin-top: 20px; }
-.social-connect h3 { font-size: 22px; color: #fff; margin-bottom: 25px; }
+.social-connect {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-connect h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 25px;
+}
 
 .social-icons {
     display: flex;
-    gap: 25px; /* More space for the pulse */
+    gap: 25px;
+    /* More space for the pulse */
     justify-content: center;
 }
 
 .social-btn {
-    height: 55px; width: 55px;
+    height: 55px;
+    width: 55px;
     background: #1a1a1a;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     font-size: 24px;
     border: 1px solid #333;
@@ -2610,23 +2996,45 @@ section .title::before {
 
 /* Pulse Animation Definition */
 @keyframes ripple {
-    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
-    100% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
 }
 
 
 
 /* --- Mobile Fixes --- */
 @media (max-width: 991px) {
-    .contact-card { width: 100%; border-radius: 0;}
-    .contact-grid { flex-direction: column; border-radius: 0;}
-    .social-icons { gap: 15px; }
-    .social-btn { height: 45px; width: 45px; font-size: 20px; }
+    .contact-card {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-btn {
+        height: 45px;
+        width: 45px;
+        font-size: 20px;
+    }
 }
+
 /* Specific Brand Colors on Hover */
 .social-btn:hover {
     transform: translateY(-5px);
-    animation: ripple 1s linear infinite; /* Ripple Effect */
+    animation: ripple 1s linear infinite;
+    /* Ripple Effect */
 }
 
 /* WhatsApp Green */
@@ -2635,18 +3043,21 @@ section .title::before {
     border-color: #25D366;
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
 }
+
 /* Facebook Blue */
 .social-btn.facebook:hover {
     background: #1877F2;
     border-color: #1877F2;
     box-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
 }
+
 /* LinkedIn Blue */
 .social-btn.linkedin:hover {
     background: #0077b5;
     border-color: #0077b5;
     box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
 }
+
 /* GitHub Grey/White */
 .social-btn.github:hover {
     background: #333;
@@ -2654,53 +3065,14 @@ section .title::before {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-/* =========================================
-   ANIMATION: SUBTLE "ALIVE" SHAKE (LOOP)
-   ========================================= */
-
-/* 1. Define the rhythmic motion */
-@keyframes floatShake {
-    0% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-2px) rotate(0.5deg); } /* Slight lift & tilt right */
-    50% { transform: translateY(0) rotate(0deg); } /* Back to center */
-    75% { transform: translateY(-2px) rotate(-0.5deg); } /* Slight lift & tilt left */
-    100% { transform: translateY(0) rotate(0deg); }
-}
-
-/* 2. Apply it to the cards */
-.projects .card {
-    /* Existing styles... */
-    /* Add this animation line: */
-    /* 6s duration makes it very slow and calm */
-    animation: floatShake 6s ease-in-out infinite;
-    
-    /* Ensure the transform origin is center so it tilts naturally */
-    transform-origin: center center;
-}
-
-/* 3. Randomize the timing */
-/* This prevents all cards from moving in perfect unison (which looks robotic) */
-.projects .card:nth-child(odd) {
-    animation-duration: 7s; /* Slower */
-    animation-delay: 0s;
-}
-
-.projects .card:nth-child(even) {
-    animation-duration: 5s; /* Faster */
-    animation-delay: 1s;
-}
-
-.projects .card:nth-child(3n) {
-    animation-duration: 6s;
-    animation-delay: 2s;
-}
 
 /* 4. Pause on Hover */
 /* When the user tries to read/click, stop the motion */
 .projects .card:hover {
     animation-play-state: paused;
     /* Apply your existing hover lift effect here if separate */
-    transform: translateY(-10px) !important; /* Override animation position */
+    transform: translateY(-10px) !important;
+    /* Override animation position */
 }
 
 
@@ -2710,11 +3082,280 @@ section .title::before {
 
 /* When hovering the chip, force the ICON (i) to turn Black */
 .skill-chip:hover i {
-    color: #000000 !important; /* Solid Black */
-    text-shadow: none !important; /* Remove glow for clarity */
-    filter: none !important; /* Remove any blur/brightness filters */
+    color: #000000 !important;
+    /* Solid Black */
+    text-shadow: none !important;
+    /* Remove glow for clarity */
+    filter: none !important;
+    /* Remove any blur/brightness filters */
 }
+
 span.skill-chip {
     max-width: 147px;
     padding: 9px;
+}
+
+
+/* chatbot */
+
+/* =========================================
+   ADVANCED AI CHATBOT STYLES
+   ========================================= */
+
+/* 1. Floating Toggle Button */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10001;
+    font-family: var(--bodyFont);
+}
+
+.chat-toggle-btn {
+    background: var(--firstColor);
+    color: #111;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--firstColor);
+}
+
+/* 2. Chat Window Container */
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 480px;
+    background: #151515;
+    /* Deep Dark */
+    border: 1px solid #333;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform-origin: bottom right;
+    transform: scale(0);
+    /* Hidden */
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.chat-window.active {
+    transform: scale(1);
+    /* Visible */
+    opacity: 1;
+}
+
+/* 3. Header Styling */
+.chat-header {
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chat-header .title {
+    font-size: 16px;
+    color: var(--firstColor);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chat-header .version {
+    font-size: 10px;
+    background: #333;
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* Status Line (Online / Computing) */
+.status {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+    margin-left: 2px;
+    transition: color 0.3s ease;
+}
+
+.status.thinking {
+    color: var(--firstColor);
+    /* Yellow when thinking */
+    text-shadow: 0 0 5px rgba(255, 194, 52, 0.4);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* 4. Chat Body */
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #111;
+}
+
+.chat-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* Messages */
+.message {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: #252525;
+    color: #eee;
+    border-bottom-left-radius: 2px;
+    border-left: 3px solid var(--firstColor);
+}
+
+.message.user {
+    align-self: flex-end;
+    background: var(--firstColor);
+    color: #111;
+    border-bottom-right-radius: 2px;
+    font-weight: 600;
+}
+
+/* 5. Footer (Input) */
+.chat-footer {
+    padding: 15px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-footer input {
+    flex: 1;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-footer input:focus {
+    border-color: var(--firstColor);
+}
+
+.chat-footer button {
+    background: var(--firstColor);
+    color: #111;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 16px;
+}
+
+.chat-footer button:hover {
+    transform: scale(1.1);
+}
+
+/* 6. Typing Indicator (... animation) */
+.typing-indicator {
+    display: inline-flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background: #252525;
+    border-radius: 12px;
+    border-bottom-left-radius: 2px;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #888;
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typingBounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
 }
